@@ -13,6 +13,6 @@ namespace Kitchen_Appliances.Models
         {
             context = ctx;
         }
-        public IQueryable<Product> Drinks => context.Products;
+        public IQueryable<Product> Products => context.Products;
     }
 }
