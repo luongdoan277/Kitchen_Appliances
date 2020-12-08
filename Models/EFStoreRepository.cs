@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace Kitchen_Appliances.Models
 {
@@ -14,5 +11,6 @@ namespace Kitchen_Appliances.Models
             context = ctx;
         }
         public IQueryable<Product> Products => context.Products;
+        public IQueryable<Category> Categories => context.Categories;
     }
 }

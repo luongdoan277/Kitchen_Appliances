@@ -8,5 +8,6 @@ namespace Kitchen_Appliances.Models
     public class IStoreRepository
     {
         IQueryable<Product> Products { get; }
+        IQueryable<Category> Categories { get; }
     }
 }
