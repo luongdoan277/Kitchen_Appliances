@@ -10,4 +10,3 @@ namespace Kitchen_Appliances.Infrastructure
             : request.Path.ToString();
     }
 }
-`
