@@ -12,6 +12,6 @@ namespace Kitchen_Appliances.Models
             : base(options) { }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Category { get; internal set; }
+        public DbSet<Category> Categories { get; internal set; }
     }
 }
