@@ -1,6 +1,6 @@
 ﻿const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-const IMG_WIDTH = 1540;
+const IMG_WIDTH = window.innerWidth;
 const slideContainer = $(".slides");
 const slideImage = [...$$(".slide")];
 
