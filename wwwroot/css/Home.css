@@ -92,8 +92,8 @@ nav {
 }
 
 .slide-container .slides > img {
-    width: 1540px;
-    height: 780px;
+    width: 100%;
+    height: auto;
     -o-object-fit: cover;
     object-fit: cover;
 }
