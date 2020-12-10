@@ -23,22 +23,25 @@ namespace Kitchen_Appliances.Models
                     new Category
                     {
                         CategoryName = "Kitchen Tools",
-                        CategoryImage = "https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?cs=srgb&dl=pexels-rene-asmussen-2544829.jpg&fm=jpg"
+                        CategoryImage = "https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        CategoryIcon = "fas fa-utensils"
                     },
                     new Category
                     {
                         CategoryName = "Fridge",
-                        CategoryImage = "https://images.pexels.com/photos/3637728/pexels-photo-3637728.jpeg?cs=srgb&dl=pexels-cleyder-duque-3637728.jpg&fm=jpg"
+                        CategoryImage = "https://images.pexels.com/photos/2343467/pexels-photo-2343467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        CategoryIcon = "fas fa-solar-panel"
+                    },
                     },
                     new Category
                     {
                         CategoryName = "Kitchen cleaning",
-                        CategoryImage = "https://images.pexels.com/photos/4114715/pexels-photo-4114715.jpeg?cs=srgb&dl=pexels-cottonbro-4114715.jpg&fm=jpg"
+                        CategoryImage = "https://images.pexels.com/photos/4022784/pexels-photo-4022784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     },
                     new Category
                     {
                         CategoryName = "Food preservation",
-                        CategoryImage = "https://images.pexels.com/photos/531446/pexels-photo-531446.jpeg?cs=srgb&dl=pexels-pixabay-531446.jpg&fm=jpg"
+                        CategoryImage = "https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                     }
                     );
             }
