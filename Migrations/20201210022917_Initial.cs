@@ -2,7 +2,7 @@
 
 namespace Kitchen_Appliances.Migrations
 {
-    public partial class Kitchen_Appliances : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,8 @@ namespace Kitchen_Appliances.Migrations
                     CategoryID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategoryImage = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CategoryImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoryIcon = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

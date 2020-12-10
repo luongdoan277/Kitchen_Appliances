@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kitchen_Appliances.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20201207153346_Kitchen_Appliances")]
-    partial class Kitchen_Appliances
+    [Migration("20201210022917_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,6 +26,9 @@ namespace Kitchen_Appliances.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<string>("CategoryIcon")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CategoryImage")
                         .HasColumnType("nvarchar(max)");
