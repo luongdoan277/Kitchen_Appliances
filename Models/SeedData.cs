@@ -32,16 +32,17 @@ namespace Kitchen_Appliances.Models
                         CategoryImage = "https://images.pexels.com/photos/2343467/pexels-photo-2343467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                         CategoryIcon = "fas fa-solar-panel"
                     },
-                    },
                     new Category
                     {
                         CategoryName = "Kitchen cleaning",
-                        CategoryImage = "https://images.pexels.com/photos/4022784/pexels-photo-4022784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        CategoryImage = "https://images.pexels.com/photos/4022784/pexels-photo-4022784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        CategoryIcon = "fas fa-hand-sparkles"
                     },
                     new Category
                     {
                         CategoryName = "Food preservation",
-                        CategoryImage = "https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        CategoryImage = "https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        CategoryIcon = "fas fa-prescription-bottle"
                     }
                     );
             }
