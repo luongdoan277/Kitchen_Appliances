@@ -1,0 +1,14 @@
+﻿@model List<Category>
+
+@foreach (Category category in Model)
+{
+    <li>
+        <a class="btn btn-block"
+           asp-action="Index" asp-controller="Home"
+           asp-route-category="@category.CategoryName"
+           asp-route-drinkPage="1">
+            <i class="@category.CategoryIcon"></i>
+            @category.CategoryName
+        </a>
+    </li>
+}

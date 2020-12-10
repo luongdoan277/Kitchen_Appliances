@@ -1,8 +1,200 @@
-﻿@{
+﻿@model ProductsListViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<vc:sale-home />
+<div class="title">
+    <p>Products</p>
 </div>
+<div class="product-category">
+    <ul class="category">
+        <vc:navigation-menu />
+    </ul>
+    <div class="lated-product">
+        <div class="product-list">
+            <vc:itemproduct-home />
+        </div>
+
+        <button id="nextPro"><i class="fas fa-chevron-right"></i></button>
+        <button id="prePro"><i class="fas fa-chevron-left"></i></button>
+    </div>
+</div>
+<div class="note">
+    <p><span>What</span> people say?</p>
+</div>
+<div class="chef-note">
+    <div class="note-content">
+        <img src="image/ChoppingBoard.jpeg" alt="" />
+        <p>
+            "Cooking is a profession that requires health, toughness, vision and
+            open thinking. What could be more wonderful than traveling the world
+            and enjoying the finest food".
+        </p>
+        <span>
+            My child can Become a Famous Chef, but will have to find someone
+            else to but not me "apprentice."
+        </span>
+    </div>
+    <img src="image/gordenRamsey.png" alt="" />
+</div>
+<div class="feauture-product">
+    <div class="title">
+        <p>Feature Product</p>
+    </div>
+
+    <div class="feature-container">
+        <div class="feature-list">
+            <div class="product">
+                <img src="./image/product.jpg" alt="" />
+                <div class="product-iformation">
+                    <a href="">Chef’s knife</a>
+                    <ul class="feed-back">
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                    </ul>
+                    <span>$200</span>
+                </div>
+                <div class="add-cart">
+                    <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+                    <p>Add to cart</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./image/product.jpg" alt="" />
+                <div class="product-iformation">
+                    <a href="">Chef’s knife</a>
+                    <ul class="feed-back">
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                    </ul>
+                    <span>$200</span>
+                </div>
+                <div class="add-cart">
+                    <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+                    <p>Add to cart</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./image/product.jpg" alt="" />
+                <div class="product-iformation">
+                    <a href="">Chef’s knife</a>
+                    <ul class="feed-back">
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                    </ul>
+                    <span>$200</span>
+                </div>
+                <div class="add-cart">
+                    <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+                    <p>Add to cart</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./image/product.jpg" alt="" />
+                <div class="product-iformation">
+                    <a href="">Chef’s knife</a>
+                    <ul class="feed-back">
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                    </ul>
+                    <span>$200</span>
+                </div>
+                <div class="add-cart">
+                    <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+                    <p>Add to cart</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./image/product.jpg" alt="" />
+                <div class="product-iformation">
+                    <a href="">Chef’s knife</a>
+                    <ul class="feed-back">
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-star"></i></a>
+                        </li>
+                    </ul>
+                    <span>$200</span>
+                </div>
+                <div class="add-cart">
+                    <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+                    <p>Add to cart</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="title-mid">
+    <p>Partner</p>
+</div>
+<ul class="partner-list">
+    <li>
+        <a href="">
+            <img src="image/frissher.png" alt="" />
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="image/globalChef.jpg" alt="" />
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="image/kyocera-vector-logo.png" alt="" />
+        </a>
+    </li>
+    <li>
+        <a href="">
+            <img src="image/wusthof.jpg" alt="" />
+        </a>
+    </li>
+</ul>
