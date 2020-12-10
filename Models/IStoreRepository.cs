@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Appliances.Models
 {
-    public class IStoreRepository
+    public interface IStoreRepository
     {
         IQueryable<Product> Products { get; }
         IQueryable<Category> Categories { get; }

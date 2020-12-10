@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image" href="/favicon.ico" />
     <title>@ViewData["Title"] - Kitchen_Appliances</title>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet" />
+    <link href="~/lib/FontAwesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/Home.css" />
@@ -17,15 +20,12 @@
             <vc:banner-home />
         </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - Kitchen_Appliances - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <div>
+            <vc:footer-home />
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

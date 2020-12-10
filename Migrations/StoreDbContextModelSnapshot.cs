@@ -25,6 +25,9 @@ namespace Kitchen_Appliances.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("CategoryIcon")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CategoryImage")
                         .HasColumnType("nvarchar(max)");
 
