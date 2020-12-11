@@ -1,30 +1,41 @@
-﻿@model List<Product>
+﻿@model ProductsListViewModel
 
-@foreach (Product product in Model)
-{
-    <div class="product">
-        <img src="@product.ProductImage" alt="" />
-        <div class="product-iformation">
-            <a href="">@product.ProductName</a>
-            <ul class="feed-back">
-                <li>
-                    <a href=""><i class="fas fa-star"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="fas fa-star"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="fas fa-star"></i></a>
-                </li>
-                <li>
-                    <a href=""><i class="fas fa-star"></i></a>
-                </li>
-            </ul>
-            <span>@product.Price</span>
+<div class="product-list">
+    @foreach (var product in Model.Products)
+    {
+        <div class="product">
+            <img src="@product.ProductImage" alt="" />
+            <div class="product-iformation">
+                <a href="">@product.ProductName</a>
+                <ul class="feed-back">
+                    <li>
+                        <a href=""><i class="fas fa-star"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-star"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-star"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fas fa-star"></i></a>
+                    </li>
+                </ul>
+                <span>@product.Price</span>
+            </div>
+            <div class="add-cart">
+                <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+                <p>Add to cart</p>
+            </div>
         </div>
-        <div class="add-cart">
-            <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
-            <p>Add to cart</p>
-        </div>
-    </div>
-}
+    }
+</div>
+<button id="nextPro"><i class="fas fa-chevron-right"></i></button>
+<button id="prePro"><i class="fas fa-chevron-left"></i></button>
+<div page-model="@Model.PagingInfo" page-action="Index"
+     page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary"
+     page-url-category="@Model.CurrentCategory"
+     class="btn-group pull-right m-1">
+</div>
