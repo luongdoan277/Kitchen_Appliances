@@ -17,8 +17,7 @@ namespace Kitchen_Appliances.Component
         }
         public IViewComponentResult Invoke()
         {
-            return View(repository.Categories
-                .ToList());
+            return View();
         }
     }
 }
