@@ -45,7 +45,9 @@ namespace Kitchen_Appliances.Models
                         CategoryIcon = "fas fa-prescription-bottle"
                     }
                     );
+                context.SaveChanges();
             }
+
 
 
             if (!context.Products.Any())
@@ -59,7 +61,7 @@ namespace Kitchen_Appliances.Models
                         Description = "Farad ne felleyn scegegkel eses thudothlon scepsegud en ezes illen sydou sydou kynzassal fugwa mezuul egyre fyodum wklelue de ualallal kynzathul maraggun ere buabeleul wylag ezes merth mezuul num syrou mezuul niha en keguggethuk urodum uos therthetyk ygoz vylagumtul werud vylag qui bel buol syrou ozuk fyomnok kynaal ezes erzem",
                         Status = 1,
                         CategoryID = 1,
-                    },new Product
+                    }, new Product
                     {
                         ProductName = "En kyul therthetyk",
                         ProductImage = "https://product.hstatic.net/1000173770/product/ce57s--main-image-1024px-2_38d3b8d356544d9cb3bacf42aae9c9d2_compact.png",
@@ -67,7 +69,7 @@ namespace Kitchen_Appliances.Models
                         Description = "Fyaal kynzathul scemem engumet ygoz mezuul aniath merth iunhum syrolm vylag wklelue vylag hol ygoz volek the kynaal en felleyn hul fyon thekunched ez mezuul de halal fyom yg bezzeg ere symeonnok iunhum yg farad uos ere fyomnok fuhazatum felleyn egyre scemem halallal hullothya merth sydou eggedum en fyodumtul syrolmol",
                         Status = 1,
                         CategoryID = 1
-                    },new Product
+                    }, new Product
                     {
                         ProductName = "Halallal sepedyk scouuo the",
                         ProductImage = "https://product.hstatic.net/1000173770/product/ce57s--main-image-1024px-2_38d3b8d356544d9cb3bacf42aae9c9d2_compact.png",
@@ -75,7 +77,7 @@ namespace Kitchen_Appliances.Models
                         Description = "Wirud ualmun syrolmol aniath thudothlon vh myth aniath fyodumtul uiraga huztuzwa tuled walasth the sumha myth en fuhazatum turuentelen fyodumtul felleyn syrolmol halal buabeleul wklelue volek vylagumtul kegulm huztuzwa buol erzem huztuzwa kyul ezes sepedyk ulud buol fyodumtul en eggen erzem huztuzwa vylagumtul tuled sepedyk iunhum kynzathul scepsegud kyt tuled",
                         Status = 1,
                         CategoryID = 1
-                    },new Product
+                    }, new Product
                     {
                         ProductName = "Ezes vh scemem sydou halal",
                         ProductImage = "https://product.hstatic.net/1000173770/product/ce57s--main-image-1024px-2_38d3b8d356544d9cb3bacf42aae9c9d2_compact.png",
@@ -96,7 +98,7 @@ namespace Kitchen_Appliances.Models
                         Description = "Fyon volek farad en wegh egyre niha maraggun eggedum halal ozuk arad iumhumnok halal owog urumemtuul kyniuhhad maraggun kegulm scepsegud qui epedek wirud fyaal bezzeg wyzeul de o owog wirud buol hioll fyom anyath halallal symeonnok kegulm therthetyk kyniuhhad hol fuhazatum fyom kegulm scemem fugwa anyath ere fuhazatum en buthuruth",
                         Status = 1,
                         CategoryID = 2
-                    },new Product
+                    }, new Product
                     {
                         ProductName = "Iumhumnok buol ne",
                         ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Ftiki.vn%2Ftu-lanh-panasonic-inverter-368-lit-nr-bx410wkvn-hang-chinh-hang-p52155021.html&psig=AOvVaw3wpTluNHnYiuBTl775qiEZ&ust=1607440306772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDynPaTvO0CFQAAAAAdAAAAABAV",
@@ -122,40 +124,40 @@ namespace Kitchen_Appliances.Models
                         CategoryID = 2
                     },
 
-                     //
+                      //
                       new Product
-                     {
-                         ProductName = "Tuled kyul eses",
-                         ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
-                         Price = 555,
-                         Description = "En wylag sydou iunhum ualmun urodum ez qui fyodum merth hyul ozuk epedek uiraga kunuel fyaal keseruen bua vh thudothlon halallal eses en erzem en halal halal wklelue ualallal syrou num fyaal erzem hyul hullothya vylag kyth mezuul uilaga wyzeul wylag bua buabeleul syrolmom tuled hul kynaal eggen kynzathul fyodumtul",
-                         Status = 1,
-                         CategoryID = 3
-                     }, new Product
-                     {
-                         ProductName = "Iunhum uilaga",
-                         ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
-                         Price = 231,
-                         Description = "Scegegkel sumha uiraga fyaal fyon ezes keguggethuk aniath buol myth ualallal fyaal fyodumtul wegh werethul bua epedek fyomnok en ne scemem ne mezuul iunhum mogomnok hul owog wylag urodum scepsegud kyul ere kegulm wyzeul o syrou en en keguggethuk scemem",
-                         Status = 1,
-                         CategoryID = 3
-                     }, new Product
-                     {
-                         ProductName = "Bua urodum mezuul",
-                         ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
-                         Price = 1235,
-                         Description = "Halallal num kyniuhhad vh aniath ezes syrolmom fyodumtul wirud kyt viragnac o hioll en sepedyk ozuk felleyn wyzeul iunhum engumet felleyn en fyodumtul epedek symeonnok ne scemem iunhum yg volek thekunched mezuul walasth qui kyth kyul de ezes kynzassal kunuel yg keseruen urumemtuul kynaal felleyn keseruen kyniuhhad ozuk buabeleul en",
-                         Status = 1,
-                         CategoryID = 3
-                     }, new Product
-                     {
-                         ProductName = "Iunhum ualallal en halal",
-                         ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
-                         Price = 543,
-                         Description = "Fyom sumha scouuo eggen egyre farad scemem aniath uilaga wirud nym keguggethuk buol leg bua iumhumnok uilaga en ere vylagumtul scepsegud iunhum aniath eses hioll uilaga tuled fyodum ezes hyul egyre scepsegud buabeleul bua egyre sydou huztuzwa kyth en nym syrolm anyath syrolmol ere wirud niha olelothya hullothya kyul ez",
-                         Status = 1,
-                         CategoryID = 3
-                     }
+                      {
+                          ProductName = "Tuled kyul eses",
+                          ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
+                          Price = 555,
+                          Description = "En wylag sydou iunhum ualmun urodum ez qui fyodum merth hyul ozuk epedek uiraga kunuel fyaal keseruen bua vh thudothlon halallal eses en erzem en halal halal wklelue ualallal syrou num fyaal erzem hyul hullothya vylag kyth mezuul uilaga wyzeul wylag bua buabeleul syrolmom tuled hul kynaal eggen kynzathul fyodumtul",
+                          Status = 1,
+                          CategoryID = 3
+                      }, new Product
+                      {
+                          ProductName = "Iunhum uilaga",
+                          ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
+                          Price = 231,
+                          Description = "Scegegkel sumha uiraga fyaal fyon ezes keguggethuk aniath buol myth ualallal fyaal fyodumtul wegh werethul bua epedek fyomnok en ne scemem ne mezuul iunhum mogomnok hul owog wylag urodum scepsegud kyul ere kegulm wyzeul o syrou en en keguggethuk scemem",
+                          Status = 1,
+                          CategoryID = 3
+                      }, new Product
+                      {
+                          ProductName = "Bua urodum mezuul",
+                          ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
+                          Price = 1235,
+                          Description = "Halallal num kyniuhhad vh aniath ezes syrolmom fyodumtul wirud kyt viragnac o hioll en sepedyk ozuk felleyn wyzeul iunhum engumet felleyn en fyodumtul epedek symeonnok ne scemem iunhum yg volek thekunched mezuul walasth qui kyth kyul de ezes kynzassal kunuel yg keseruen urumemtuul kynaal felleyn keseruen kyniuhhad ozuk buabeleul en",
+                          Status = 1,
+                          CategoryID = 3
+                      }, new Product
+                      {
+                          ProductName = "Iunhum ualallal en halal",
+                          ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thespruceeats.com%2Fkitchen-cleaning-tips-481830&psig=AOvVaw3crAwtPZrUkyQ2RdMS7G_-&ust=1607440507080000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD3stiUvO0CFQAAAAAdAAAAABAD",
+                          Price = 543,
+                          Description = "Fyom sumha scouuo eggen egyre farad scemem aniath uilaga wirud nym keguggethuk buol leg bua iumhumnok uilaga en ere vylagumtul scepsegud iunhum aniath eses hioll uilaga tuled fyodum ezes hyul egyre scepsegud buabeleul bua egyre sydou huztuzwa kyth en nym syrolm anyath syrolmol ere wirud niha olelothya hullothya kyul ez",
+                          Status = 1,
+                          CategoryID = 3
+                      }
 
                       //
 
@@ -167,7 +169,7 @@ namespace Kitchen_Appliances.Models
                         Description = "",
                         Status = 1,
                         CategoryID = 4
-                    },new Product
+                    }, new Product
                     {
                         ProductName = "Bua scegegkel kyul buthuruth mezuul",
                         ProductImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.foodnetwork.com%2Fhealthyeats%2F2010%2F07%2Ffood-preserving-safety&psig=AOvVaw1rLQB8M9IFYsVC--sFn9Ga&ust=1607440683145000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDv3aqVvO0CFQAAAAAdAAAAABAI",
@@ -191,6 +193,87 @@ namespace Kitchen_Appliances.Models
                         Description = "En kegulm kynzathul tuled keguggethuk mezuul de kyul thudothlon thez kynzassal fugwa mezuul aniath engumet uilaga fugwa ygoz thez scegenul bezzeg uilaga fyodumtul kyul fyaal fyomnok sumha mogomnok hyul egyre eggedum thudothlon erzem egyre hullothya urodum ulud ezes volek urodum halal eses walasth urodum syrolm wegh turuentelen en wirud fyom",
                         Status = 1,
                         CategoryID = 4
+                    }
+                    );
+                context.SaveChanges();
+            }
+
+
+            if (!context.Medias.Any())
+            {
+                context.Medias.AddRange(
+                    new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/109395/pexels-photo-109395.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/109395/pexels-photo-109395.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/109395/pexels-photo-109395.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 1
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/5720778/pexels-photo-5720778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/5720778/pexels-photo-5720778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/5720778/pexels-photo-5720778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 2
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/594060/pexels-photo-594060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/594060/pexels-photo-594060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/594060/pexels-photo-594060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 3
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/269245/pexels-photo-269245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/269245/pexels-photo-269245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/269245/pexels-photo-269245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 4
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/691155/pexels-photo-691155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/691155/pexels-photo-691155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/691155/pexels-photo-691155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 5
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/238230/pexels-photo-238230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/238230/pexels-photo-238230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/238230/pexels-photo-238230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 6
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/3933200/pexels-photo-3933200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/3933200/pexels-photo-3933200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/3933200/pexels-photo-3933200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 7
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/4282688/pexels-photo-4282688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        MediaImage2 = "https://images.pexels.com/photos/4282688/pexels-photo-4282688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        MediaImage3 = "https://images.pexels.com/photos/4282688/pexels-photo-4282688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        ProductID = 8
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/4637735/pexels-photo-4637735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/4637735/pexels-photo-4637735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/4637735/pexels-photo-4637735.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 9
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/917300/pexels-photo-917300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/917300/pexels-photo-917300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/917300/pexels-photo-917300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 10
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/1568639/pexels-photo-1568639.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        MediaImage2 = "https://images.pexels.com/photos/1568639/pexels-photo-1568639.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        MediaImage3 = "https://images.pexels.com/photos/1568639/pexels-photo-1568639.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        ProductID = 11
+                    }, new Media
+                    {
+                        MediaImage1 = "https://images.pexels.com/photos/3850924/pexels-photo-3850924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage2 = "https://images.pexels.com/photos/3850924/pexels-photo-3850924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        MediaImage3 = "https://images.pexels.com/photos/3850924/pexels-photo-3850924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        ProductID = 12
                     }
                     );
                 context.SaveChanges();

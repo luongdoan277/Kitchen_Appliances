@@ -35,7 +35,7 @@ namespace Kitchen_Appliances.Component
                 productsList = new ProductsListViewModel
                 {
                     Products = repository.Products
-                    .Where(d => category==null || d.Category.CategoryName == category)
+                    .Where(d => category == null)
                     .OrderBy(d => d.ProductID)
                     .Skip((productPage - 1) * PageSize)
                     .Take(PageSize)

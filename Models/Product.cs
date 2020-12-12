@@ -17,6 +17,7 @@ namespace Kitchen_Appliances.Models
         public int Status { get; set; }
         public int CategoryID { get; set; }
 
-        public virtual Category Category { get; set; }
+        public virtual Category Categories { get; set; }
+        public virtual ICollection<Media> Medias { get; set; }
     }
 }

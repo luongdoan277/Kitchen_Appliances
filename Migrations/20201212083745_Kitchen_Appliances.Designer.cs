@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kitchen_Appliances.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20201210022917_Initial")]
-    partial class Initial
+    [Migration("20201212083745_Kitchen_Appliances")]
+    partial class Kitchen_Appliances
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,32 @@ namespace Kitchen_Appliances.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.Media", b =>
+                {
+                    b.Property<int>("MediaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("MediaImage1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MediaImage2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MediaImage3")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.HasKey("MediaID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("Medias");
                 });
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>
@@ -73,20 +99,36 @@ namespace Kitchen_Appliances.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("Kitchen_Appliances.Models.Media", b =>
+                {
+                    b.HasOne("Kitchen_Appliances.Models.Product", "Products")
+                        .WithMany("Medias")
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>
                 {
-                    b.HasOne("Kitchen_Appliances.Models.Category", "Category")
+                    b.HasOne("Kitchen_Appliances.Models.Category", "Categories")
                         .WithMany("Products")
                         .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("Categories");
                 });
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>
+                {
+                    b.Navigation("Medias");
                 });
 #pragma warning restore 612, 618
         }
