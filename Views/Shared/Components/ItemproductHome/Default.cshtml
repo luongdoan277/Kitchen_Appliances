@@ -1,34 +1,30 @@
 ﻿@model ProductsListViewModel
 
-<div class="product-list">
-    @foreach (var product in Model.Products)
-    {
-        <div class="product">
-            <img src="@product.ProductImage" alt="" />
-            <div class="product-iformation">
-                <a asp-page="/ProductDetail" >@product.ProductName</a>
-                <ul class="feed-back">
-                    <li>
-                        <a href=""><i class="fas fa-star"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fas fa-star"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fas fa-star"></i></a>
-                    </li>
-                    <li>
-                        <a href=""><i class="fas fa-star"></i></a>
-                    </li>
-                </ul>
-                <span>@product.Price</span>
-            </div>
-            <div class="add-cart">
-                <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
-                <p>Add to cart</p>
-            </div>
+@foreach (var product in Model.Products)
+{
+    <div class="product">
+        <img src="@product.ProductImage" alt="" />
+        <div class="product-iformation">
+            <a asp-page="/ProductDetail">@product.ProductName</a>
+            <ul class="feed-back">
+                <li>
+                    <a href=""><i class="fas fa-star"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-star"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-star"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fas fa-star"></i></a>
+                </li>
+            </ul>
+            <span>@product.Price</span>
         </div>
-    }
-</div>
-<button id="nextPro"><i class="fas fa-chevron-right"></i></button>
-<button id="prePro"><i class="fas fa-chevron-left"></i></button>
+        <div class="add-cart">
+            <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+            <p>Add to cart</p>
+        </div>
+    </div>
+}

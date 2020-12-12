@@ -1,9 +1,6 @@
 ﻿@model ProductsListViewModel
-@{
-    ViewData["Title"] = "Home Page";
-}
 
-<vc:sale-home />
+<vc:sale-home/>
 <div class="title">
     <p>Products</p>
 </div>
@@ -12,7 +9,12 @@
         <vc:navigation-menu />
     </ul>
     <div class="lated-product">
-        <vc:itemproduct-home category="" product-page=1/>
+        <div class="product-list">
+            <vc:itemproduct-home />
+
+        </div>
+        <button id="nextPro"><i class="fas fa-chevron-right"></i></button>
+        <button id="prePro"><i class="fas fa-chevron-left"></i></button>
     </div>
 </div>
 <div class="note">
@@ -20,7 +22,7 @@
 </div>
 <div class="chef-note">
     <div class="note-content">
-        <img src="image/ChoppingBoard.jpeg" alt="" />
+        <img src="~/image/ChoppingBoard.jpeg" alt="" />
         <p>
             "Cooking is a profession that requires health, toughness, vision and
             open thinking. What could be more wonderful than traveling the world
@@ -31,7 +33,7 @@
             else to but not me "apprentice."
         </span>
     </div>
-    <img src="image/gordenRamsey.png" alt="" />
+    <img src="~/image/gordenRamsey.png" alt="" />
 </div>
 <div class="feauture-product">
     <div class="title">
@@ -174,22 +176,22 @@
 <ul class="partner-list">
     <li>
         <a href="">
-            <img src="image/frissher.png" alt="" />
+            <img src="~/image/frissher.png" alt="" />
         </a>
     </li>
     <li>
         <a href="">
-            <img src="image/globalChef.jpg" alt="" />
+            <img src="~/image/globalChef.jpg" alt="" />
         </a>
     </li>
     <li>
         <a href="">
-            <img src="image/kyocera-vector-logo.png" alt="" />
+            <img src="~/image/kyocera-vector-logo.png" alt="" />
         </a>
     </li>
     <li>
         <a href="">
-            <img src="image/wusthof.jpg" alt="" />
+            <img src="~/image/wusthof.jpg" alt="" />
         </a>
     </li>
 </ul>
