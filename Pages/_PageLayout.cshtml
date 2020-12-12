@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Kitchen_Appliances</title>
+    <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,900&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/FontAwesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/itemDetails.css" />
+</head>
+<body>
+    <header>
+        <div>
+            <vc:header-top />
+        </div>
+    </header>
+    <div class="m-1 p-1">
+        @RenderBody()
+    </div>
+    <footer>
+        <div>
+            <vc:footer-home />
+        </div>
+    </footer>
+    <script src="~/js/gallery.js"></script>
+</body>
+</html>

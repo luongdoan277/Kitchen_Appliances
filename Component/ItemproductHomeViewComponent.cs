@@ -19,24 +19,28 @@ namespace Kitchen_Appliances.Component
         }
         public IViewComponentResult Invoke(string category, int productPage)
         {
-            ProductsListViewModel productsList = new ProductsListViewModel
-            {
-                Products = repository.Products
-                .Where(d => category == null || d.Category.CategoryName == category)
-                .OrderBy(d => d.ProductID)
-                .Skip((productPage - 1) * PageSize)
-                .Take(PageSize),
-                PagingInfo = new PagingInfo
+            ProductsListViewModel productsList = new ProductsListViewModel { };
+            //if (category == null)
+            //{
+            //    productsList = new ProductsListViewModel
+            //    {
+            //        Products = repository.Products
+            //        .OrderBy(d => d.ProductID)
+            //        .Skip((productPage - 1) * PageSize)
+            //        .Take(PageSize)
+            //    };
+            //}
+            //else
+            //{
+                productsList = new ProductsListViewModel
                 {
-                    CurrentPage = productPage,
-                    ItemsPerPage = PageSize,
-                    TotalItems = category == null ?
-                    repository.Products.Count() :
-                    repository.Products.Where(
-                        e => e.Category.CategoryName == category).Count()
-                },
-                CurrentCategory = category
-            };
+                    Products = repository.Products
+                    .Where(d => category==null || d.Category.CategoryName == category)
+                    .OrderBy(d => d.ProductID)
+                    .Skip((productPage - 1) * PageSize)
+                    .Take(PageSize)
+                };
+            //}
             return View(productsList);
         }
     }
