@@ -8,6 +8,8 @@ namespace Kitchen_Appliances.Models.ViewModels
 
         public IEnumerable<Category> Categories { get; set; }
 
+        public IEnumerable<Media> Medias { get; set; }
+
         public PagingInfo PagingInfo { get; set; }
 
         public string CurrentCategory { get; set; }

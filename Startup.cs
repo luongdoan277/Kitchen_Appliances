@@ -72,9 +72,9 @@ namespace Kitchen_Appliances
                     new { Controller = "Home", action = "Index", productPage = 1 });
 
                 //Details
-                endpoints.MapControllerRoute("productdetail",
-                    "productdetail/ProductID={ProductID}",
-                    new { Controller = "ProductDetail", action = "Details", ProductID = 1 });
+                endpoints.MapControllerRoute("ProductDetail",
+                    "ProductDetail/Id={ProductID}",
+                    new { Controller = "Product", action = "ProductDetail", ProductID = 1 });
 
 
                 endpoints.MapDefaultControllerRoute();

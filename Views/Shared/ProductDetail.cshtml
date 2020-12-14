@@ -1,0 +1,92 @@
+﻿
+@foreach (var p in Model.Products)
+{
+    <section style="margin-top: 17rem">
+        <div class="product-details">
+            <div class="product-gallery">
+                <div class="gallery">
+                    <div class="image-gallery">
+                        <img src=@p.ProductImage class="gallery-img" alt="" />
+                    </div>
+                    <div class="image-preview">
+                        <img src=@p.ProductImage alt="" />
+                        <img src="~/image/product2-big.jpg" alt="" />
+                        <img src="~/image/product3-big.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="pro-infor">
+                <div class="infor-container">
+                    <div class="list-infor">
+                        <div class="title-price">
+                            <p>@p.ProductName</p>
+                        </div>
+                        <ul class="interactive">
+                            <li>
+                                <a href="" class="branch">
+                                    <i class="fas fa-code-branch"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><i class="far fa-heart"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="code">
+                        <p>Code: M.P0.XM.20110363-RD</p>
+                        <span>$ @p.Price</span>
+                    </div>
+                    <div class="option-color">
+                        <label>Color</label>
+                        <ul class="option">
+                            <li class="active-color"><a href="" id="red"></a></li>
+                            <li><a href="" id="brown"></a></li>
+                            <li><a href="" id="green"></a></li>
+                        </ul>
+                    </div>
+                    <div class="counter-pro">
+                        <label>Counter</label>
+                        <div class="edit-count">
+                            <button id="plusCount">-</button>
+                            <input type="number" value="1" />
+                            <button id="preCount">+</button>
+                        </div>
+                    </div>
+                    <div class="clear-fix">
+                        <a id="addtocart" href="">Add To Cart</a>
+                        <a id="paynow" href="">Pay Now</a>
+                    </div>
+                    <div class="commitment">
+                        <div class="label-content">
+                            <label><i class="fas fa-shipping-fast"></i></label>
+                            <p>Nationwide delivery orders from 100k</p>
+                        </div>
+                        <div class="label-content">
+                            <label><i class="fas fa-coins"></i></label>
+                            <p>COD inner city of Hanoi, HCMC</p>
+                        </div>
+                        <div class="label-content">
+                            <label><i class="fas fa-exchange-alt"></i></label>
+                            <p>Change and pay in 24h</p>
+                        </div>
+                    </div>
+                    <div class="delivery-support">
+                        <label><i class="far fa-plus-square"></i></label>
+                        <div class="content-support">
+                            <p>Support ship 20k for orders over 300k in Hanoi, HCMC</p>
+                            <p>Support ship 30k for orders over 500k nationwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="margin-bottom: 15rem">
+        <div class="pro-description">
+            <div class="content-des">
+                <p>Product Description</p>
+                <img src=@p.ProductImage alt="">
+            </div>
+        </div>
+    </section>
+}

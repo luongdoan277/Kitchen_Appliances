@@ -8,17 +8,22 @@ using Kitchen_Appliances.Models.ViewModels;
 
 namespace Kitchen_Appliances.Controllers
 {
-    public class ProductDetailController : Controller
+    public class ProductController : Controller
     {
 
         private IStoreRepository repository;
 
-        public ProductDetailController(IStoreRepository repo)
+        public ProductController(IStoreRepository repo)
         {
             repository = repo;
         }
 
-        public ViewResult Details(int ProductID)
+        public ViewResult Index()
+        {
+            return View();
+        }
+
+        public ViewResult ProductDetail(int ProductID)
 
               => View(new ProductsListViewModel
               {
@@ -26,12 +31,6 @@ namespace Kitchen_Appliances.Controllers
                  .Where(p => p.ProductID == ProductID),
 
               });
-
-
-        public IActionResult Index()
-        {
-            return View();
-        }
 
     }
     
