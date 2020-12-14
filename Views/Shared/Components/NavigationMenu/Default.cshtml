@@ -1,12 +1,12 @@
-﻿@model List<Category>
+﻿@model ProductsListViewModel
 
-@foreach (Category category in Model)
+@foreach (var category in Model.Categories)
 {
     <li>
         <a class="btn btn-block"
            asp-action="Index" asp-controller="Home"
            asp-route-category="@category.CategoryName"
-           asp-route-drinkPage="1">
+           asp-route-productPage="1">
             <i class="@category.CategoryIcon"></i>
             @category.CategoryName
         </a>

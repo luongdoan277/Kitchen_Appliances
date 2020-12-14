@@ -1,17 +1,17 @@
-﻿using Kitchen_Appliances.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Kitchen_Appliances.Models;
 
 namespace Kitchen_Appliances.Component
 {
-    public class NavigationMenuViewComponent : ViewComponent
+    public class FeatureProductViewComponent : ViewComponent
     {
-        private IStoreRepository repository;
+        private IStoreRepository  repository;
 
-        public NavigationMenuViewComponent(IStoreRepository repo)
+        public FeatureProductViewComponent(IStoreRepository repo)
         {
             repository = repo;
         }

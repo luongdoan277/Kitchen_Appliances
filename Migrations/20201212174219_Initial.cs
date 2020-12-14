@@ -2,7 +2,7 @@
 
 namespace Kitchen_Appliances.Migrations
 {
-    public partial class Kitchen_Appliances : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

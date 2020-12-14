@@ -1,9 +1,10 @@
-﻿@model IEnumerable<string>
+﻿@model ProductsListViewModel
 
 <div class="information">
 </div>
 <nav>
-    <a asp-page="/"><p id="logo">Kitchen</p></a>
+
+    <a asp-action="Index" asp-controller="Home" id="logo">Kitchen</a>
     <ul class="nav-links">
         <li><a href="" class="link active">Home</a></li>
         <li><a href="" class="link">Product</a></li>
