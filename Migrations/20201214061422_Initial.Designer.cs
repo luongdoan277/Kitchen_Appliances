@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kitchen_Appliances.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20201212174219_Initial")]
+    [Migration("20201214061422_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

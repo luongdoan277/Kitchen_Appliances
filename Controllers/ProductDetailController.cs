@@ -13,17 +13,26 @@ namespace Kitchen_Appliances.Controllers
 
         private IStoreRepository repository;
 
+        public ProductDetailController(IStoreRepository repo)
+        {
+            repository = repo;
+        }
+
+        public ViewResult Details(int ProductID)
+
+              => View(new ProductsListViewModel
+              {
+                  Products = repository.Products
+                 .Where(p => p.ProductID == ProductID),
+
+              });
+
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public ViewResult DetailProduct(int id)
-            => View(new ProductsListViewModel
-            {
-                Products = repository.Products
-                 .Where(p => p.ProductID == id),
-
-            });
     }
+    
 }
