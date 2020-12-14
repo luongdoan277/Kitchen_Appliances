@@ -73,6 +73,9 @@ namespace Kitchen_Appliances
                 endpoints.MapControllerRoute("productdetail",
                     "productdetail",
                     new { Controller = "ProductDetail", action = "Index"});
+                endpoints.MapControllerRoute("checkout",
+                   "checkout",
+                   new { Controller = "Checkout", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapRazorPages();
