@@ -25,7 +25,7 @@ namespace Kitchen_Appliances.Controllers
             ProductsListViewModel productsList = new ProductsListViewModel
             {
                 Products = repository.Products
-                .Where(d => category == null || d.Category.CategoryName == category)
+                .Where(d => category == null || d.Categories.CategoryName == category)
                 .OrderBy(d => d.ProductID)
                 .Skip((productPage - 1) * PageSize)
                 .Take(PageSize),
@@ -37,25 +37,26 @@ namespace Kitchen_Appliances.Controllers
                     TotalItems = category == null ?
                     repository.Products.Count() :
                     repository.Products.Where(
-                        e => e.Category.CategoryName == category).Count()
+                        e => e.Categories.CategoryName == category).Count()
                 },
                 CurrentCategory = category
             };
             return View(productsList);
         }
 
+
+        //public ViewResult Detail(int id)
+        //    => View(new ProductsListViewModel
+        //    {
+        //        Products = repository.Products
+        //         .Where(p => p.ProductID == id),
+
+        //    });
+
+
         public IActionResult Privacy()
         {
             return View();
-        }
-        public IActionResult RenderCategory(string category, int productPage)
-        {
-            return ViewComponent("ItemproductHome", new {category=category, productPage = productPage });
-        } 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

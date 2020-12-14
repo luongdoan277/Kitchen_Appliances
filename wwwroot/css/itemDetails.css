@@ -7,7 +7,7 @@
 
 .product-details {
   width: 91%;
-  height: 35rem;
+  min-height: 35rem;
   display: flex;
   margin: 0 70px;
   align-items: center;
@@ -50,13 +50,13 @@
   align-items: center;
 }
 
-.gallery .image-preview > img {
-  /* flex-grow: 1; */
-  height: 100px;
-  cursor: pointer;
-  border: 2px solid #cdb9b9;
-}
-
+    .gallery .image-preview > img {
+        flex-grow: 1;
+        height: 100px;
+        cursor: pointer;
+        border: 2px solid #cdb9b9;
+        object-fit: cover;
+    }
 .infor-container {
   width: 80%;
   margin: 0 auto;

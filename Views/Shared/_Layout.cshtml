@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,15 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet" />
     <link href="~/lib/FontAwesome/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/Home.css" />
     <link rel="stylesheet" href="~/css/itemDetails.css" />
     <link href="~/css/checkout.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-            
-          <vc:header-top />
+        <vc:header-top/>
     </header>
     <main>
         @RenderBody()
@@ -30,7 +28,8 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/gallery.js" ></script>
+    <script src="~/js/gallery.js"></script>
+    <script src="~/js/scrollMenu.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

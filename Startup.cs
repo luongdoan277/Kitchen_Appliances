@@ -70,13 +70,13 @@ namespace Kitchen_Appliances
                 endpoints.MapControllerRoute("pagination",
                     "Drinks/page{productPage:int}",
                     new { Controller = "Home", action = "Index", productPage = 1 });
-                endpoints.MapControllerRoute("productdetail",
-                    "productdetail",
-                    new { Controller = "ProductDetail", action = "Index"});
+                //Details
+                endpoints.MapControllerRoute("ProductDetail",
+                    "ProductDetail/Id={ProductID}",
+                    new { Controller = "Product", action = "ProductDetail", ProductID = 1 });
                 endpoints.MapControllerRoute("checkout",
                    "checkout",
                    new { Controller = "Checkout", action = "Index" });
-
                 endpoints.MapDefaultControllerRoute();
                 endpoints.MapRazorPages();
             });

@@ -1,10 +1,6 @@
-﻿using Kitchen_Appliances.Models;
-using Kitchen_Appliances.Models.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Threading.Tasks;
+using Kitchen_Appliances.Models;
 
 namespace Kitchen_Appliances.Component
 {
