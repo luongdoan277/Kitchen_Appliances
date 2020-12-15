@@ -56,7 +56,7 @@ namespace Kitchen_Appliances.Models
                     new Product
                     {
                         ProductName = "Fyom leg buol iunhum en",
-                        ProductImage = "https://product.hstatic.net/1000375725/product/1024_5c773b8106494c81973f946fe1c8555c_master.jpg",
+                        ProductImage = "https://images.pexels.com/photos/4335613/pexels-photo-4335613.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                         Price = 919,
                         Description = "Farad ne felleyn scegegkel eses thudothlon scepsegud en ezes illen sydou sydou kynzassal fugwa mezuul egyre fyodum wklelue de ualallal kynzathul maraggun ere buabeleul wylag ezes merth mezuul num syrou mezuul niha en keguggethuk urodum uos therthetyk ygoz vylagumtul werud vylag qui bel buol syrou ozuk fyomnok kynaal ezes erzem",
                         Status = 1,
@@ -64,7 +64,7 @@ namespace Kitchen_Appliances.Models
                     }, new Product
                     {
                         ProductName = "En kyul therthetyk",
-                        ProductImage = "https://vn-test-11.slatic.net/original/fa152a507f45dc1d73bb65250a84d2cb.jpg_600x600q80.jpg",
+                        ProductImage = "https://images.pexels.com/photos/4397793/pexels-photo-4397793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                         Price = 1200,
                         Description = "Fyaal kynzathul scemem engumet ygoz mezuul aniath merth iunhum syrolm vylag wklelue vylag hol ygoz volek the kynaal en felleyn hul fyon thekunched ez mezuul de halal fyom yg bezzeg ere symeonnok iunhum yg farad uos ere fyomnok fuhazatum felleyn egyre scemem halallal hullothya merth sydou eggedum en fyodumtul syrolmol",
                         Status = 1,
@@ -72,7 +72,7 @@ namespace Kitchen_Appliances.Models
                     }, new Product
                     {
                         ProductName = "Halallal sepedyk scouuo the",
-                        ProductImage = "https://salt.tikicdn.com/cache/w444/ts/product/1a/8c/8b/0e7c054639b65bf7b0a9d1a003b35a48.jpg",
+                        ProductImage = "https://images.pexels.com/photos/6062041/pexels-photo-6062041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                         Price = 327,
                         Description = "Wirud ualmun syrolmol aniath thudothlon vh myth aniath fyodumtul uiraga huztuzwa tuled walasth the sumha myth en fuhazatum turuentelen fyodumtul felleyn syrolmol halal buabeleul wklelue volek vylagumtul kegulm huztuzwa buol erzem huztuzwa kyul ezes sepedyk ulud buol fyodumtul en eggen erzem huztuzwa vylagumtul tuled sepedyk iunhum kynzathul scepsegud kyt tuled",
                         Status = 1,
@@ -80,12 +80,30 @@ namespace Kitchen_Appliances.Models
                     }, new Product
                     {
                         ProductName = "Ezes vh scemem sydou halal",
-                        ProductImage = "https://toplist.vn/images/800px/dong-dao-gom-kyocera-nhat-ban-512534.jpg",
+                        ProductImage = "https://images.pexels.com/photos/6061884/pexels-photo-6061884.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                         Price = 458,
                         Description = "Urodum syrou qui fyodum kethwe wyzeul kynzathul ez ygoz uos bezzeg symeonnok yg urodum olelothya kynzathul uos bua urodum keguggethuk halal maraggun fyomnok merth kyth aniath ualmun de en en olelothya hioll fyodum buabeleul bezzeg buabeleul yg num engumet thekunched en bua syrou ne kyniuhhad syrou scepsegud felleyn halallal ez",
                         Status = 1,
                         CategoryID = 1
                     },
+                     new Product
+                     {
+                         ProductName = "Vh kynaal",
+                         ProductImage = "https://images.pexels.com/photos/6061884/pexels-photo-6061884.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                         Price = 458,
+                         Description = "Urodum syrou qui fyodum kethwe wyzeul kynzathul ez ygoz uos bezzeg symeonnok yg urodum olelothya kynzathul uos bua urodum keguggethuk halal maraggun fyomnok merth kyth aniath ualmun de en en olelothya hioll fyodum buabeleul bezzeg buabeleul yg num engumet thekunched en bua syrou ne kyniuhhad syrou scepsegud felleyn halallal ez",
+                         Status = 1,
+                         CategoryID = 1
+                     },
+                      new Product
+                      {
+                          ProductName = "Mezuul scegenul",
+                          ProductImage = "https://images.pexels.com/photos/952371/pexels-photo-952371.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                          Price = 458,
+                          Description = "Urodum syrou qui fyodum kethwe wyzeul kynzathul ez ygoz uos bezzeg symeonnok yg urodum olelothya kynzathul uos bua urodum keguggethuk halal maraggun fyomnok merth kyth aniath ualmun de en en olelothya hioll fyodum buabeleul bezzeg buabeleul yg num engumet thekunched en bua syrou ne kyniuhhad syrou scepsegud felleyn halallal ez",
+                          Status = 1,
+                          CategoryID = 1
+                      },
 
                     //fridge
 
@@ -122,6 +140,24 @@ namespace Kitchen_Appliances.Models
                         Status = 1,
                         CategoryID = 2
                     },
+                     new Product
+                     {
+                         ProductName = "Olelothya halall",
+                         ProductImage = "https://germankitchen.vn/Data/ResizeImage/files/tulanh/KAD90VB20x200x200x5.jpg",
+                         Price = 356,
+                         Description = "Sepedyk kyul viragnac o en uos kethwe scegenul werud hullothya egyre niha eses en syrolmol wegh scepsegud viragnac turuentelen therthetyk sumha owog kyniuhhad illen syrolmol wirud fyom ualmun engumet egyre en ere en fyomnok erzem ez buol ozuk vylag syrolmol uos vylag hullothya myth thudothlon therthetyk wegh vylagumtul engumet thez",
+                         Status = 1,
+                         CategoryID = 2
+                     },
+                      new Product
+                      {
+                          ProductName = "De ezes",
+                          ProductImage = "https://germankitchen.vn/Data/ResizeImage/files/tulanh/KAD90VB20x200x200x5.jpg",
+                          Price = 356,
+                          Description = "Sepedyk kyul viragnac o en uos kethwe scegenul werud hullothya egyre niha eses en syrolmol wegh scepsegud viragnac turuentelen therthetyk sumha owog kyniuhhad illen syrolmol wirud fyom ualmun engumet egyre en ere en fyomnok erzem ez buol ozuk vylag syrolmol uos vylag hullothya myth thudothlon therthetyk wegh vylagumtul engumet thez",
+                          Status = 1,
+                          CategoryID = 2
+                      },
 
                       //clean
 
@@ -157,14 +193,32 @@ namespace Kitchen_Appliances.Models
                           Description = "Fyom sumha scouuo eggen egyre farad scemem aniath uilaga wirud nym keguggethuk buol leg bua iumhumnok uilaga en ere vylagumtul scepsegud iunhum aniath eses hioll uilaga tuled fyodum ezes hyul egyre scepsegud buabeleul bua egyre sydou huztuzwa kyth en nym syrolm anyath syrolmol ere wirud niha olelothya hullothya kyul ez",
                           Status = 1,
                           CategoryID = 3
-                      }
+                      },
+                       new Product
+                       {
+                           ProductName = "O myth",
+                           ProductImage = "https://ae01.alicdn.com/kf/H7fb627de93794e3c8ae587c339ea61e9V.jpg_q50.jpg",
+                           Price = 543,
+                           Description = "Fyom sumha scouuo eggen egyre farad scemem aniath uilaga wirud nym keguggethuk buol leg bua iumhumnok uilaga en ere vylagumtul scepsegud iunhum aniath eses hioll uilaga tuled fyodum ezes hyul egyre scepsegud buabeleul bua egyre sydou huztuzwa kyth en nym syrolm anyath syrolmol ere wirud niha olelothya hullothya kyul ez",
+                           Status = 1,
+                           CategoryID = 3
+                       },
+                        new Product
+                        {
+                            ProductName = "Vylag sydou",
+                            ProductImage = "https://ae01.alicdn.com/kf/H7fb627de93794e3c8ae587c339ea61e9V.jpg_q50.jpg",
+                            Price = 543,
+                            Description = "Fyom sumha scouuo eggen egyre farad scemem aniath uilaga wirud nym keguggethuk buol leg bua iumhumnok uilaga en ere vylagumtul scepsegud iunhum aniath eses hioll uilaga tuled fyodum ezes hyul egyre scepsegud buabeleul bua egyre sydou huztuzwa kyth en nym syrolm anyath syrolmol ere wirud niha olelothya hullothya kyul ez",
+                            Status = 1,
+                            CategoryID = 3
+                        }
 
-                      //box
+                    //box
 
                     , new Product
                     {
                         ProductName = "Ne epedek ezes fyodum urodum",
-                        ProductImage = "https://product.hstatic.net/1000296871/product/hf395bbe1c8e147a6b2b9a9b78cab35d0y_0137aad9711b4939923f2f1d674a42db_master.jpg",
+                        ProductImage = "https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                         Price = 667,
                         Description = "",
                         Status = 1,
@@ -172,7 +226,7 @@ namespace Kitchen_Appliances.Models
                     }, new Product
                     {
                         ProductName = "Bua scegegkel kyul buthuruth mezuul",
-                        ProductImage = "https://image.thanhnien.vn/500/uploaded/2014/saigonamthuc.thanhnien.com.vn/pictures201409/ngoclinh/shutterstock_honey.jpg",
+                        ProductImage = "https://images.pexels.com/photos/2531176/pexels-photo-2531176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                         Price = 543,
                         Description = "Felleyn kyt hyul urodum epedek wyzeul the bel ez egyre syrolm syrolmom wylag ezes o scouuo keseruen sepedyk vh arad tuled kynzathul keguggethuk werud syrolm kynaal keguggethuk werud halal uiraga egembelu ualallal walasth o vylagumtul arad qui halal ezes erzem farad hol merth anyath ezes walasth wirud ere urodum ozuk",
                         Status = 1,
@@ -180,7 +234,7 @@ namespace Kitchen_Appliances.Models
                     }, new Product
                     {
                         ProductName = "Sumha ozuk vylagumtul ualallal niha",
-                        ProductImage = "https://salt.tikicdn.com/cache/w444/ts/product/ad/60/3b/993fdd5b6cd854e0ecc7c227ee4a6a7a.jpg",
+                        ProductImage = "https://images.pexels.com/photos/1640768/pexels-photo-1640768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
                         Price = 453,
                         Description = "Kynzassal erzem syrou fyaal buthuruth en halallal en en ezes hyul egembelu hyul werethul tuled farad en bel keseruen mezuul yg vh kegulm erzem anyath wklelue bel kegulm fugwa owog nym iunhum eses keguggethuk hyul uilaga urodum sydou scegenul halallal scepsegud iunhum merth egembelu eggen farad uilaga kyul farad yg",
                         Status = 1,
@@ -188,7 +242,25 @@ namespace Kitchen_Appliances.Models
                     }, new Product
                     {
                         ProductName = "O niha nym scemem scepsegud",
-                        ProductImage = "https://m.viamclinic.vn/upload/banner/wip1587521968.jpg",
+                        ProductImage = "https://images.pexels.com/photos/1640775/pexels-photo-1640775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                        Price = 765,
+                        Description = "En kegulm kynzathul tuled keguggethuk mezuul de kyul thudothlon thez kynzassal fugwa mezuul aniath engumet uilaga fugwa ygoz thez scegenul bezzeg uilaga fyodumtul kyul fyaal fyomnok sumha mogomnok hyul egyre eggedum thudothlon erzem egyre hullothya urodum ulud ezes volek urodum halal eses walasth urodum syrolm wegh turuentelen en wirud fyom",
+                        Status = 1,
+                        CategoryID = 4
+                    }
+                    , new Product
+                    {
+                        ProductName = "Keguggethuk ezes",
+                        ProductImage = "https://images.pexels.com/photos/674689/pexels-photo-674689.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                        Price = 765,
+                        Description = "En kegulm kynzathul tuled keguggethuk mezuul de kyul thudothlon thez kynzassal fugwa mezuul aniath engumet uilaga fugwa ygoz thez scegenul bezzeg uilaga fyodumtul kyul fyaal fyomnok sumha mogomnok hyul egyre eggedum thudothlon erzem egyre hullothya urodum ulud ezes volek urodum halal eses walasth urodum syrolm wegh turuentelen en wirud fyom",
+                        Status = 1,
+                        CategoryID = 4
+                    }
+                    , new Product
+                    {
+                        ProductName = "Kyth aniath",
+                        ProductImage = "https://images.pexels.com/photos/890686/pexels-photo-890686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                         Price = 765,
                         Description = "En kegulm kynzathul tuled keguggethuk mezuul de kyul thudothlon thez kynzassal fugwa mezuul aniath engumet uilaga fugwa ygoz thez scegenul bezzeg uilaga fyodumtul kyul fyaal fyomnok sumha mogomnok hyul egyre eggedum thudothlon erzem egyre hullothya urodum ulud ezes volek urodum halal eses walasth urodum syrolm wegh turuentelen en wirud fyom",
                         Status = 1,
