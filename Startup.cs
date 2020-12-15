@@ -70,7 +70,6 @@ namespace Kitchen_Appliances
                 endpoints.MapControllerRoute("pagination",
                     "Drinks/page{productPage:int}",
                     new { Controller = "Home", action = "Index", productPage = 1 });
-
                 //Details
 
                 endpoints.MapControllerRoute("ProductDetail",
