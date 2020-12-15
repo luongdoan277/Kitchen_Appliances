@@ -15,7 +15,10 @@
         </ul>
         <div class="lated-product">
             <div class="product-list">
-                <vc:itemproduct-home />
+                @foreach (var product in Model.Products)
+                {
+                    <vc:itemproduct-home product="product"/>
+                }
             </div>
             <button id="nextPro"><i class="fas fa-chevron-right"></i></button>
             <button id="prePro"><i class="fas fa-chevron-left"></i></button>

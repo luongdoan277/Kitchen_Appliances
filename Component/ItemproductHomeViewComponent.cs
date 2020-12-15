@@ -12,9 +12,9 @@ namespace Kitchen_Appliances.Component
         {
             repository = repo;
         }
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(Product product)
         {
-            return View();
+            return View(product);
         }
     }
 }
