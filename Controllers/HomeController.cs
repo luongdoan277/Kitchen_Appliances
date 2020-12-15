@@ -20,6 +20,7 @@ namespace Kitchen_Appliances.Controllers
         {
             repository = repo;
         }
+
         public IActionResult Index(string category, int productPage = 1)
         {
             ProductsListViewModel productsList = new ProductsListViewModel
@@ -43,16 +44,6 @@ namespace Kitchen_Appliances.Controllers
             };
             return View(productsList);
         }
-
-
-        //public ViewResult Detail(int id)
-        //    => View(new ProductsListViewModel
-        //    {
-        //        Products = repository.Products
-        //         .Where(p => p.ProductID == id),
-
-        //    });
-
 
         public IActionResult Privacy()
         {
