@@ -9,6 +9,7 @@ const nextBtn = $("#next");
 const preBtn = $("#pre");
 
 slideContainer.style.width = IMG_WIDTH + "px";
+//slideImage.style.minWidth = IMG_WIDTH + "px";
 
 let counter = 0;
 
