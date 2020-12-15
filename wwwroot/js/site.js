@@ -4,8 +4,6 @@ const IMG_WIDTH = window.innerWidth;
 const slideContainer = $(".slides");
 const slideImage = [...$$(".slide")];
 
-const countArr = [1, 2, 3];
-const countFeature = [1, 2];
 
 //Button
 const nextBtn = $("#next");
@@ -55,30 +53,30 @@ preBtn.addEventListener('click', () => {
 //-----------------------------------Product Demo-------------------------------
 
 const productList = $('.product-list');
-const prouductItem = [...$$('.product')];
+const productItem = [...$$('.product')];
 
 const nextPro = $('#nextPro');
 const prePro = $('#prePro');
 
 const imgProduct = 270;
 
-productList.style.width = prouductItem.length * imgProduct + "px";
+productList.style.width = (productItem.length - 5) * imgProduct + "px";
 
 let index = 0;
 
 nextPro.addEventListener('click', () => {
-    if (index < countArr.length - 1) {
+    if (index < productItem.length/2 - 5) {
         index++;
     } else {
         index = 0;
     }
     productList.style.transition = "transform 0.4s ease-in-out";
-    productList.style.transform = 'translateX(' + (- imgProduct * index) + 'px)';
+    productList.style.transform = 'translateX(' + (-imgProduct * index) + 'px)';
 });
 
 prePro.addEventListener('click', () => {
     if (index == 0) {
-        index = countArr.length - 1;
+        index = productItem.length/2 - 5;
     }
     else {
         index--;
@@ -106,12 +104,12 @@ const nextFea = $('#nextFea');
 const preFea = $('#preFea');
 
 
-featureList.style.width = prouductItem.length * imgProduct + "px";
+featureList.style.width = (productItem.length - 20) * imgProduct + "px";
 
 let count = 0;
 
 nextFea.addEventListener('click', () => {
-    if (count < countFeature.length - 1) {
+    if (count < productItem.length/2 - 7) {
         count++;
     } else {
         count = 0;
@@ -122,7 +120,7 @@ nextFea.addEventListener('click', () => {
 
 preFea.addEventListener('click', () => {
     if (count == 0) {
-        count = countFeature.length - 1;
+        count = productItem.length/2 - 7;
     }
     else {
         count--;
