@@ -35,6 +35,8 @@ namespace Kitchen_Appliances
               );
             services.AddScoped<IStoreRepository, EFStoreRepository>();
             services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
 
         }
 
@@ -55,6 +57,7 @@ namespace Kitchen_Appliances
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 
