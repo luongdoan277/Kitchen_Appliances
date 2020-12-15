@@ -152,7 +152,7 @@
 }
 
 .active-color{
-  box-shadow: 0 0 15px 0 rgb(0 0 0 / 50%);
+  box-shadow: 0 0 15px 0 rgb(0 0 0 50%);
 }
 
 .counter-pro{
@@ -188,8 +188,8 @@
   margin-bottom: 25px;
 }
 
-.clear-fix > a{
-  width: 49%;
+.clear-fix button{
+  width: 100%;
   text-decoration: none;
   background: #605555;
   color: #f4f4f4;
@@ -201,7 +201,7 @@
   text-transform: uppercase;
   border-radius: 5px;
 }
-.clear-fix > a:hover{
+.clear-fix button:hover{
   background: #df4646;
 }
 .commitment{
@@ -254,4 +254,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.widthForm {
+    width: 49%;
 }

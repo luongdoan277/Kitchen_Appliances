@@ -3,7 +3,7 @@
 <div class="product">
     <img src="@Model.ProductImage" alt="" />
     <div class="product-iformation">
-        <a href="ProductDetail/Id=@Model.ProductID">@Model.ProductName</a>
+        <a asp-action="Index" asp-controller="Product" asp-route-ProductID="@Model.ProductID">@Model.ProductName</a>
         <ul class="feed-back">
             <li>
                 <a href=""><i class="fas fa-star"></i></a>
@@ -25,7 +25,7 @@
         <input type="hidden" name="returnUrl"
                value="@ViewContext.HttpContext.Request.PathAndQuery()" />
         <button class="add-cart">
-            <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
+            <div class="cart"> <i class="fas fa-shopping-cart"></i> </div>
             <p>Add to cart</p>
         </button>
     </form>

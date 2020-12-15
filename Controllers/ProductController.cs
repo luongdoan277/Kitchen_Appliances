@@ -18,20 +18,14 @@ namespace Kitchen_Appliances.Controllers
             repository = repo;
         }
 
-        public ViewResult Index()
+        public ViewResult Index(int ProductID)
         {
-            return View();
-        }
-
-        public ViewResult ProductDetail(int ProductID)
-
-              => View(new ProductsListViewModel
-              {
-                  Products = repository.Products
+            return View(new ProductsListViewModel
+            {
+                Products = repository.Products
                  .Where(p => p.ProductID == ProductID),
-
-              });
-
+            });
+        }
     }
     
 }
