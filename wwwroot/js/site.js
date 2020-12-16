@@ -109,7 +109,7 @@ featureList.style.width = (productItem.length - 20) * imgProduct + "px";
 let count = 0;
 
 nextFea.addEventListener('click', () => {
-    if (count < productItem.length/2 - 7) {
+    if (count < productItem.length - 1) {
         count++;
     } else {
         count = 0;
@@ -120,7 +120,7 @@ nextFea.addEventListener('click', () => {
 
 preFea.addEventListener('click', () => {
     if (count == 0) {
-        count = productItem.length/2 - 7;
+        count = productItem.length - 1;
     }
     else {
         count--;

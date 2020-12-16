@@ -1,74 +1,48 @@
-﻿<table class="table-cart">
-    <thead>
-        <tr>
-            <th style="width: 20%">Product</th>
-            <th style="width: 25%" class="text-center">Name</th>
-            <th style="width: 15%" class="text-center">Price</th>
-            <th style="width: 15%" class="text-center">Counter</th>
-            <th style="width: 15%" class="text-center">Total</th>
-            <th style="width: 10%" class="text-center">Method</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="item-cart">
-            <td class="cart-img">
-                <img src="../images/item1.jpg" alt="" />
-            </td>
-            <td class="cart-des text-center">
-                <a href="">Today we are going to take a look on different ways</a>
-            </td>
-            <td class="cart-price text-center">$50</td>
-            <td class="cart-counter text-center">
-                <button class="minus">-</button>
-                <input type="text" value="1" class="input-value" />
-                <button class="plus">+</button>
-            </td>
-            <td class="cart-total text-center">$100</td>
-            <td class="cart-method text-center">
-                <a href="">
-                    <i class="fas fa-trash"></i>
-                </a>
-            </td>
-        </tr>
-        <tr class="item-cart">
-            <td class="cart-img">
-                <img src="../images/item1.jpg" alt="" />
-            </td>
-            <td class="cart-des text-center">
-                <a href="">Today we are going to take a look on different ways</a>
-            </td>
-            <td class="cart-price text-center">$50</td>
-            <td class="cart-counter text-center">
-                <button class="minus">-</button>
-                <input type="text" value="1" class="input-value" />
-                <button class="plus">+</button>
-            </td>
-            <td class="cart-total text-center">$100</td>
-            <td class="cart-method text-center">
-                <a href="">
-                    <i class="fas fa-trash"></i>
-                </a>
-            </td>
-        </tr>
-        <tr class="item-cart">
-            <td class="cart-img">
-                <img src="../images/item1.jpg" alt="" />
-            </td>
-            <td class="cart-des text-center">
-                <a href="">Today we are going to take a look on different ways</a>
-            </td>
-            <td class="cart-price text-center">$50</td>
-            <td class="cart-counter text-center">
-                <button class="minus">-</button>
-                <input type="text" value="1" class="input-value" />
-                <button class="plus">+</button>
-            </td>
-            <td class="cart-total text-center">$100</td>
-            <td class="cart-method text-center">
-                <a href="">
-                    <i class="fas fa-trash"></i>
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+﻿@model Itemcart
+
+@if (Model != null)
+{
+    <table class="table-cart">
+        <thead>
+            <tr>
+                <th style="width: 20%">Product</th>
+                <th style="width: 25%" class="text-center">Name</th>
+                <th style="width: 15%" class="text-center">Price</th>
+                <th style="width: 15%" class="text-center">Counter</th>
+                <th style="width: 15%" class="text-center">Total</th>
+                <th style="width: 10%" class="text-center">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr class="item-cart">
+                    <td class="cart-img">
+                        <img src=@item.Product.ProductImage alt="" />
+                    </td>
+                    <td class="cart-des text-center">
+                        <a asp-action="Index" asp-controller="Product" asp-route-ProductID="@item.Product.ProductID">@item.Product.ProductName</a>
+                    </td>
+                    <td class="cart-price text-center">$@item.Product.Price</td>
+                    <td class="cart-counter text-center">
+                        <button class="minus">-</button>
+                        <input type="text" value=@item.Quantity class="input-value" />
+                        <button class="plus">+</button>
+                    </td>
+                    <td class="cart-total text-center">@((item.Quantity * item.Product.Price).ToString("c"))</td>
+                    <td class="cart-method text-center">
+                        <a href="">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else { 
+    <div class="cart-null text-center" style="margin-bottom: 6rem">
+        <img src="~/image/empty-cart.png" height="28rem"/>
+    </div>
+}

@@ -66,21 +66,26 @@ namespace Kitchen_Appliances
                 endpoints.MapControllerRoute("catpage",
                      "{category}/Page{productPage:int}",
                      new { Controller = "Home", action = "Index" });
-
                 endpoints.MapControllerRoute("page",
                     "Page{productPage:int}",
                     new { Controller = "Home", action = "Index", productPage = 1 });
                 endpoints.MapControllerRoute("pagination",
                     "Drinks/page{productPage:int}",
                     new { Controller = "Home", action = "Index", productPage = 1 });
-                //Details
 
+                //Details
                 endpoints.MapControllerRoute("ProductDetail",
                     "ProductDetail/Id={ProductID}",
                     new { Controller = "Product", action = "ProductDetail"});
+
                 endpoints.MapControllerRoute("ProductDetail",
                     "{category}/ProductDetail/Id={ProductID}",
                     new { Controller = "Product", action = "ProductDetail"});
+
+                //Checkout
+                endpoints.MapControllerRoute("Checkout",
+                    "Checkout",
+                    new { Controller = "Checkout", action = "Index" });
 
 
                 endpoints.MapDefaultControllerRoute();

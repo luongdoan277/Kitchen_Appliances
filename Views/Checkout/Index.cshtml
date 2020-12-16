@@ -1,20 +1,137 @@
-﻿<section style="margin-top: 15rem">
+﻿@model Itemcart
+
+
+<section style="margin-top: 15rem">
     <div class="checkout-container">
         <div class="checkout-content">
-           <vc:table-cart/>
+            <vc:table-cart />
         </div>
-        <div class="shipping-sup">
-            <p>Support ship 20k for orders over 300k in Hanoi, HCMC</p>
-            <p>Support ship 30k for orders over 500k nationwide</p>
-        </div>
-        <div class="cart-total">
-            <div class="total-price">
-                <p>Total Price: $ 150</p>
+        @if (@Model != null)
+        {
+            <div class="shipping-sup">
+                <p>Support ship 20k for orders over 300k in Hanoi, HCMC</p>
+                <p>Support ship 30k for orders over 500k nationwide</p>
             </div>
-            <div class="clearfix">
-                <a href="" style="background-color: rgb(156, 64, 64);">Keep Shopping</a>
-                <a href="">Payment</a>
+            <div class="cart-total">
+                <div class="total-price">
+                    <p>Total Price:@Model.ComputeTotalValue().ToString("c")</p>
+                </div>
+                <div class="clearfix">
+                    <a asp-controller="Home" asp-action="Index" style="background-color: rgb(156, 64, 64);">Keep Shopping</a>
+                    <p id="payment">Payment</p>
+                </div>
+            </div>
+        }
+        else
+        {
+        }
+    </div>
+</section>
+
+<section class="payment">
+    <div class="payment__background">
+        <div class="payment__content">
+            <div class="payment__header">
+                <h3>Paypal Pro Paymnent Form</h3>
+                <p>Would you like to buy one of our item?</p>
+            </div>
+            <div class="payment__tableproduct">
+                <div class="tableproduct__title">
+                    <p>My Product</p>
+                </div>
+                <table class="payment__product">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th style="text-align: center">Qty</th>
+                            <th style="text-align: center">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px">product name</td>
+                            <td style="text-align: center">2</td>
+                            <td style="text-align: center">$ 30</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px">product name</td>
+                            <td style="text-align: center">2</td>
+                            <td style="text-align: center">$ 30</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px">product name</td>
+                            <td style="text-align: center">2</td>
+                            <td style="text-align: center">$ 30</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px">product name</td>
+                            <td style="text-align: center">2</td>
+                            <td style="text-align: center">$ 30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="payment__totalPrice">
+                <p>
+                    Total Price: <span>
+                        $100
+                    </span>
+                </p>
+            </div>
+            <form class="payment__method">
+                <div class="method__title">
+                    <p>Payment Title</p>
+                </div>
+                <table>
+                    <tbody>
+                        <tr style="border: none">
+                            <td>
+                                <input type="radio" name="payment" id="" />
+                                <label>
+                                    <a href=""><i class="fab fa-cc-visa"></i></a>
+                                    <a href=""><i class="fab fa-cc-mastercard"></i></a>
+                                    <a href=""><i class="fab fa-cc-discover"></i></a>
+                                    <a href=""><i class="fab fa-cc-diners-club"></i></a>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="radio" name="payment" id="" />
+                                <label>
+                                    <a href=""><i class="fab fa-cc-paypal"></i></a>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="infor-buyer">
+                    <label>Buyer Name</label>
+                    <div class="buyer-name">
+                        <input type="text" name="firstName" placeholder="First Name" />
+                        <input type="text" name="lastName" placeholder="Last Name" />
+                    </div>
+                    <label>Buyer E-Mail</label>
+                    <div class="buyer-email">
+                        <input type="text"
+                               name="email"
+                               placeholder="ex: myname@example.com" />
+                    </div>
+                    <label>Number Phone</label>
+                    <div class="buyer-number">
+                        <input type="text" name="Number" placeholder="+84:" />
+                    </div>
+                    <label>Shipping Address</label>
+                    <div class="shipping-address">
+                        <input type="text" name="address" placeholder="Address" />
+                    </div>
+                </div>
+                <div class="submit-payment">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <div class="close-popup">
+                <i class="fas fa-times" id="close"></i>
             </div>
         </div>
     </div>
 </section>
+
