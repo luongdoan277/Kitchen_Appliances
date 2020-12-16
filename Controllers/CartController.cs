@@ -23,7 +23,7 @@ namespace Kitchen_Appliances.Controllers
         {
             Product product = repository.Products.FirstOrDefault(p => p.ProductID == ProductID);
             Itemcart = HttpContext.Session.GetJson<Itemcart>("cart") ?? new Itemcart();
-            Itemcart.AddItem(product , 1);
+            Itemcart.AddItem(product, 1);
             HttpContext.Session.SetJson("cart", Itemcart);
             return Redirect(Request.Headers["Referer"].ToString());
         }
@@ -32,7 +32,7 @@ namespace Kitchen_Appliances.Controllers
         {
             Product product = repository.Products.FirstOrDefault(p => p.ProductID == ProductID);
             Itemcart = HttpContext.Session.GetJson<Itemcart>("cart") ?? new Itemcart();
-            Itemcart.DeleteAItem(product,1);
+            Itemcart.DeleteAItem(product, 1);
             HttpContext.Session.SetJson("cart", Itemcart);
             return Redirect(Request.Headers["Referer"].ToString());
         }

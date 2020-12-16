@@ -22,7 +22,7 @@
                                     <p>Qty: @item.Quantity</p>
                                 </div>
                                 <div class="col-md-3">
-                                    <a asp-controller="Cart" asp-action="RemoveToCart" class="delete-itemscart"><i class="fas fa-trash-alt btn"></i></a>
+                                    <a asp-controller="Cart" asp-action="RemoveToCart" asp-route-ProductID="@item.Product.ProductID" class="delete-itemscart"><i class="fas fa-trash-alt btn"></i></a>
                                 </div>
                             </div>
                         </div>
