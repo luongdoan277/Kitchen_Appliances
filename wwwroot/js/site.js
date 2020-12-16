@@ -142,3 +142,15 @@ navLinks.forEach((link) => {
         link.classList.add('active');
     })
 });
+//----------------------------------------------------------------------
+
+
+function checkout() {
+    const cart = document.querySelector('.cart-icon');
+    const checkout = document.querySelector('.cart-checkout');
+
+    cart.addEventListener('click', () => {
+        checkout.classList.toggle('active-checkout');
+    });
+}
+checkout();

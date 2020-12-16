@@ -1,0 +1,44 @@
+﻿@model Itemcart
+
+    <div class="square"></div>
+    <div class="checkout">
+        <div class="head-checkout">
+            <p>Your Shopping Cart</p>
+        </div>
+        <div id="change-item-cart">
+            @if (@Model != null)
+            {
+                <div class="content-checkout" id="style-1">
+                    @foreach (var item in Model.Items)
+                    {
+                        <div class="items-cart">
+                            <div class="image-itemscart">
+                                <img src="@item.Product.ProductImage" alt="" />
+                            </div>
+                            <div class="description-cart row">
+                                <div class="col-md-9">
+                                    <a asp-action="Index" asp-controller="Product" asp-route-ProductID="@item.Product.ProductID">@item.Product.ProductName</a>
+                                    <p>$@item.Product.Price</p>
+                                    <p>Qty: @item.Quantity</p>
+                                </div>
+                                <div class="col-md-3">
+                                    <a asp-controller="Cart" asp-action="RemoveToCart" class="delete-itemscart"><i class="fas fa-trash-alt btn"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="total-cart">
+                    <p>Subtotal :</p>
+                    <span>@Model.ComputeTotalValue().ToString("c")</span>
+                </div>
+            }
+            else
+            {
+                <p style="height: 431px; text-align: center; padding-top: 50%"><b style="color: #949494">Your cart is empty</b></p>
+            }
+        </div>
+        <div class="go-checkout">
+            <a href="">Go to Checkout</a>
+        </div>
+    </div>
