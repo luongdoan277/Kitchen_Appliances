@@ -20,7 +20,7 @@
         </ul>
         <span>@Model.Price</span>
     </div>
-    <form method="post" asp-page="/Cart" id="@Model.ProductID">
+    <form method="post" asp-controller="Cart" asp-action="AddToCart" id="@Model.ProductID">
         <input type="hidden" asp-for="ProductID" />
         <input type="hidden" name="returnUrl"
                value="@ViewContext.HttpContext.Request.PathAndQuery()" />

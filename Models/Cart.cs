@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 
 namespace Kitchen_Appliances.Models
 {
-    public class Cart
+    public class Itemcart
     {
-        public List<CartLine> Lines { get; set; } = new List<CartLine>();
+        public List<Cart> Items { get; set; } = new List<Cart>();
 
         public void AddItem(Product product, int quantity)
         {
-            CartLine line = Lines
+            Cart item = Items
                 .Where(p => p.Product.ProductID == product.ProductID)
                 .FirstOrDefault();
-            if (line == null)
+            if (item == null)
             {
-                Lines.Add(new CartLine
+                Items.Add(new Cart
                 {
                     Product = product,
                     Quantity = quantity
@@ -24,22 +24,29 @@ namespace Kitchen_Appliances.Models
             }
             else
             {
-                line.Quantity += quantity;
+                item.Quantity += quantity;
             }
         }
+        public void DeleteAItem(Product product, int quantity)
+        {
+            Cart item = Items
+                .Where(p => p.Product.ProductID == product.ProductID)
+                .FirstOrDefault();
+            item.Quantity -= quantity;
+        }
 
-        public void RemoveLine(Product product)
-            => Lines.RemoveAll(l => l.Product.ProductID == product.ProductID);
+        public void RemoveItem(Product product)
+            => Items.RemoveAll(i => i.Product.ProductID == product.ProductID);
 
         public decimal ComputeTotalValue()
-            => Lines.Sum(e => e.Product.Price * e.Quantity);
+            => Items.Sum(e => e.Product.Price * e.Quantity);
 
-        public void Clear()
-            => Lines.Clear();
+        //    public void Clear()
+        //        => Lines.Clear();
     }
-    public class CartLine
+    public class Cart
     {
-        public int CartLineID { get; set; }
+        public int CartID { get; set; }
         public Product Product { get; set; }
         public int Quantity { get; set; }
     }
