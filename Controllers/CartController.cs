@@ -19,6 +19,8 @@ namespace Kitchen_Appliances.Controllers
 
         public Itemcart Itemcart { get; set; }
 
+
+
         public IActionResult AddToCart(long ProductID)
         {
             Product product = repository.Products.FirstOrDefault(p => p.ProductID == ProductID);

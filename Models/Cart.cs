@@ -7,7 +7,16 @@ namespace Kitchen_Appliances.Models
 {
     public class Itemcart
     {
+        public class Cart
+        {
+            public int CartID { get; set; }
+            public Product Product { get; set; }
+            public int Quantity { get; set; }
+        }
+
+
         public List<Cart> Items { get; set; } = new List<Cart>();
+
 
         public void AddItem(Product product, int quantity)
         {
@@ -36,18 +45,17 @@ namespace Kitchen_Appliances.Models
         }
 
         public void RemoveItem(Product product)
-            => Items.RemoveAll(i => i.Product.ProductID == product.ProductID);
+        {
+            if(product != null)
+            {
+                Items.RemoveAll(i => i.Product.ProductID == product.ProductID);
+            }
+        }
 
         public decimal ComputeTotalValue()
             => Items.Sum(e => e.Product.Price * e.Quantity);
 
         //    public void Clear()
         //        => Lines.Clear();
-    }
-    public class Cart
-    {
-        public int CartID { get; set; }
-        public Product Product { get; set; }
-        public int Quantity { get; set; }
     }
 }

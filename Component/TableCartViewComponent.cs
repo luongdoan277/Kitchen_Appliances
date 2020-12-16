@@ -1,4 +1,7 @@
-﻿using Kitchen_Appliances.Models;
+﻿using Kitchen_Appliances.Helpers;
+using Kitchen_Appliances.Infrastructure;
+using Kitchen_Appliances.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,7 +21,8 @@ namespace Kitchen_Appliances.Component
         }
         public IViewComponentResult Invoke()
         {
-            return View();
+            Itemcart Items = HttpContext.Session.GetJson<Itemcart>("cart");
+            return View(Items);
         }
     }
 }
