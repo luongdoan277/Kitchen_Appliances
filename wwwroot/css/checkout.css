@@ -206,7 +206,6 @@ tbody > tr {
     font-size: 14px;
     margin: 0;
 }
-
 .payment__method table {
     width: 100%;
 }
@@ -221,6 +220,18 @@ tbody > tr {
             align-items: center;
         }
 
+            .payment__method table > tbody > tr > td > input {
+                cursor: pointer;
+            }
+
+            .payment__method table > tbody > tr > td > label {
+                font-size: 20px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
             .payment__method table > tbody > tr > td > label {
                 padding-left: 20px;
             }
@@ -230,6 +241,9 @@ tbody > tr {
                     font-size: 32px;
                 }
 
+                label{
+                    margin: 0;
+                }
 .payment__totalPrice {
     display: flex;
     justify-content: flex-end;
@@ -317,3 +331,24 @@ input:focus {
 .popup-active {
     display: block;
 }
+
+.cart-null {
+    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .cart-null > p {
+        position: relative;
+        left: -11rem;
+        top: 31px;
+        font-size: 23px;
+    }
+
+        .cart-null > p > span {
+            font-size: 28px;
+            font-weight: bold;
+            color: crimson;
+        }
