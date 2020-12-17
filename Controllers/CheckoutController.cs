@@ -32,10 +32,8 @@ namespace Kitchen_Appliances.Controllers
             return View(Items);
         }
         [HttpPost]
-        public async Task<IActionResult> Checkout(decimal total, string firstName, string lastName, string email, string Number, string address)
+        public async Task<IActionResult> Checkout(int payment_method,decimal total, string firstName, string lastName, string email, string Number, string address)
         {
-            var payPalAPI = new PayPalAPI(configuration);
-            string url = await payPalAPI.getRedirectURLToPayPal(total, "USD");
             Random random = new Random();
             StringBuilder builder = new StringBuilder();
             string OrderOPP = builder.Append(Convert.ToChar(Convert.ToInt32(random.Next(1, 125)))).ToString();
@@ -51,7 +49,7 @@ namespace Kitchen_Appliances.Controllers
                 CustomerID = customer.CustomerID,
                 OrderAddress = address,
                 ShipMethod = 1,
-                PaymentMethod = 1,
+                PaymentMethod = payment_method,
                 PaymentStatus = true,
                 TotalPrice = total,
                 OrderStatus = true
@@ -70,6 +68,19 @@ namespace Kitchen_Appliances.Controllers
             context.Customers.Add(customer);
             context.Orders.Add(order);
             context.SaveChanges();
+            string url = null;
+            if (payment_method == 2)
+            {
+                url = "/";
+            }
+            else
+            {
+                if (payment_method == 1)
+                {
+                    var payPalAPI = new PayPalAPI(configuration);
+                    url = await payPalAPI.getRedirectURLToPayPal(total, "USD");
+                }
+            }
             return Redirect(url);
         }
         [Route("Success")]
