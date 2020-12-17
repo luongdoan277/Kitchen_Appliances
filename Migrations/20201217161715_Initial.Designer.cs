@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kitchen_Appliances.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20201217094403_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201217161715_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

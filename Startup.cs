@@ -67,7 +67,7 @@ namespace Kitchen_Appliances
                      "{category}/Page{productPage:int}",
                      new { Controller = "Home", action = "Index" });
                 endpoints.MapControllerRoute("page",
-                    "Page{productPage:int}",
+                    "/",
                     new { Controller = "Home", action = "Index", productPage = 1 });
                 endpoints.MapControllerRoute("pagination",
                     "Drinks/page{productPage:int}",

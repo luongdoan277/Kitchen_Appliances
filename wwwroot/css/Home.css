@@ -52,6 +52,9 @@ nav {
     font-size: 35px;
     color: #d6cdcd;
 }
+    a:hover {
+        text-decoration: none;
+    }
 
 .nav-links {
     display: -webkit-box;
@@ -554,7 +557,6 @@ nav {
 }
 
 .chef-note {
-    width: 91%;
     margin: 0 70px;
     height: 500px;
     display: flex;
@@ -608,7 +610,6 @@ nav {
 }
 
 .feature-container {
-    width: 91%;
     min-height: 440px;
     margin: 0 70px;
     background: #f4f4f4;

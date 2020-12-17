@@ -16,7 +16,7 @@ namespace Kitchen_Appliances.Models
         public int PaymentMethod { get; set; }
         public bool PaymentStatus { get; set; }
         [Column(TypeName = "decimal(8,2)")]
-        public decimal TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
         public bool OrderStatus { get; set; }
     }
 }

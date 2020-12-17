@@ -56,11 +56,14 @@ tbody::before {
     .table-cart > tbody > tr > td > a {
         text-decoration: none;
         color: rgb(56, 53, 53);
+        border-color: black;
+        padding:0 .75rem;
     }
 
         .table-cart > tbody > tr > td > a:hover {
             color: rgb(197, 84, 84);
-            text-decoration: underline;
+            text-decoration: none;
+            border-color: black;
         }
 
     .table-cart > tbody > tr > td.cart-img {

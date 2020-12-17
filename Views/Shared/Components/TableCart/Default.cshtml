@@ -25,13 +25,13 @@
                     </td>
                     <td class="cart-price text-center">$@item.Product.Price</td>
                     <td class="cart-counter text-center">
-                        <button class="minus">-</button>
+                        <a class="minus btn" asp-controller="Cart" asp-action="DeleteToCart" asp-route-ProductID="@item.Product.ProductID">-</a>
                         <input type="text" value=@item.Quantity class="input-value" />
-                        <button class="plus">+</button>
+                        <a class="plus btn" asp-controller="Cart" asp-action="AddToCart" asp-route-ProductID="@item.Product.ProductID">+</a>
                     </td>
                     <td class="cart-total text-center">@((item.Quantity * item.Product.Price).ToString("c"))</td>
                     <td class="cart-method text-center">
-                        <a href="">
+                        <a asp-controller="Cart" asp-action="RemoveToCart" asp-route-ProductID="@item.Product.ProductID">
                             <i class="fas fa-trash"></i>
                         </a>
                     </td>
