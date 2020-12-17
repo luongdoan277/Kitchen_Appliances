@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kitchen_Appliances.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20201216155151_Initial")]
+    [Migration("20201217084557_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -18,7 +18,7 @@ namespace Kitchen_Appliances.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Category", b =>
                 {
@@ -39,6 +39,27 @@ namespace Kitchen_Appliances.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.Customer", b =>
+                {
+                    b.Property<int>("CustomerID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("CustomerEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerID");
+
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Media", b =>
@@ -65,6 +86,69 @@ namespace Kitchen_Appliances.Migrations
                     b.HasIndex("ProductID");
 
                     b.ToTable("Medias");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.Order", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OrderAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderOPP")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("OrderStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PaymentMethod")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("PaymentStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ShipMethod")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.HasKey("OrderID");
+
+                    b.HasIndex("CustomerID");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.OrderItem", b =>
+                {
+                    b.Property<int>("OrderItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductQty")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderItemID");
+
+                    b.HasIndex("OrderID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>
@@ -108,6 +192,36 @@ namespace Kitchen_Appliances.Migrations
                         .IsRequired();
 
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.Order", b =>
+                {
+                    b.HasOne("Kitchen_Appliances.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.OrderItem", b =>
+                {
+                    b.HasOne("Kitchen_Appliances.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kitchen_Appliances.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>
