@@ -43,6 +43,10 @@ namespace Kitchen_Appliances.Controllers
             Itemcart = HttpContext.Session.GetJson<Itemcart>("cart") ?? new Itemcart();
             Itemcart.RemoveItem(product);
             HttpContext.Session.SetJson("cart", Itemcart);
+            if(Itemcart.Items.Count == 0)
+            {
+                HttpContext.Session.Remove("cart");
+            }
             return Redirect(Request.Headers["Referer"].ToString());
         }
     }

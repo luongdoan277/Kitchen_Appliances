@@ -16,7 +16,7 @@ namespace Kitchen_Appliances.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.1");
+                .HasAnnotation("ProductVersion", "5.0.0");
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Category", b =>
                 {
@@ -184,36 +184,6 @@ namespace Kitchen_Appliances.Migrations
                         .IsRequired();
 
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("Kitchen_Appliances.Models.Order", b =>
-                {
-                    b.HasOne("Kitchen_Appliances.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("Kitchen_Appliances.Models.OrderItem", b =>
-                {
-                    b.HasOne("Kitchen_Appliances.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Kitchen_Appliances.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>

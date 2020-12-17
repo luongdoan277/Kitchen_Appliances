@@ -71,6 +71,7 @@ namespace Kitchen_Appliances.Controllers
             string url = null;
             if (payment_method == 2)
             {
+                HttpContext.Session.Remove("cart");
                 url = "/";
             }
             else
