@@ -3,6 +3,7 @@
 
 <section style="margin-top: 15rem">
     <div class="checkout-container">
+        <h1>Checkout</h1>
         <div class="checkout-content">
             <vc:table-cart />
         </div>
@@ -48,61 +49,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="padding: 10px">product name</td>
-                            <td style="text-align: center">2</td>
-                            <td style="text-align: center">$ 30</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px">product name</td>
-                            <td style="text-align: center">2</td>
-                            <td style="text-align: center">$ 30</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px">product name</td>
-                            <td style="text-align: center">2</td>
-                            <td style="text-align: center">$ 30</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px">product name</td>
-                            <td style="text-align: center">2</td>
-                            <td style="text-align: center">$ 30</td>
-                        </tr>
+                        @foreach (var item in Model.Items)
+                        {
+                            <tr>
+                                <td style="padding: 10px">@item.Product.ProductName</td>
+                                <td style="text-align: center">@item.Quantity</td>
+                                <td style="text-align: center">@item.Product.Price.ToString("c"))</td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
             <div class="payment__totalPrice">
                 <p>
-                    Total Price: <span>
-                        $100
+                    Total Price:
+                    <span>
+                        @Model.ComputeTotalValue().ToString("c")
                     </span>
                 </p>
             </div>
-            <form class="payment__method">
+            <form class="payment__method" method="post" asp-controller="Checkout" asp-action="Checkout">
+                <input hidden name="total" value="@Model.ComputeTotalValue()"/>
                 <div class="method__title">
                     <p>Payment Title</p>
                 </div>
-                <table>
-                    <tbody>
-                        <tr style="border: none">
-                            <td>
-                                <input type="radio" name="payment" id="" />
-                                <label>
-                                    <a href=""><i class="fab fa-cc-visa"></i></a>
-                                    <a href=""><i class="fab fa-cc-mastercard"></i></a>
-                                    <a href=""><i class="fab fa-cc-discover"></i></a>
-                                    <a href=""><i class="fab fa-cc-diners-club"></i></a>
-                                </label>
-                            </td>
-                            <td>
-                                <input type="radio" name="payment" id="" />
-                                <label>
-                                    <a href=""><i class="fab fa-cc-paypal"></i></a>
-                                </label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
                 <div class="infor-buyer">
                     <label>Buyer Name</label>
                     <div class="buyer-name">

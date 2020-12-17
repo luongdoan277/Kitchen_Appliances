@@ -14,10 +14,10 @@ namespace Kitchen_Appliances.Models
         public string OrderAddress { get; set; }
         public int ShipMethod { get; set; }
         public int PaymentMethod { get; set; }
-        public int PaymentStatus { get; set; }
+        public bool PaymentStatus { get; set; }
         [Column(TypeName = "decimal(8,2)")]
         public decimal TotalPrice { get; set; }
-        public int OrderStatus { get; set; }
+        public bool OrderStatus { get; set; }
         public virtual Customer Customer { get; set; }
     }
 }

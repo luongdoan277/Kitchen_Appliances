@@ -20,7 +20,7 @@ namespace Kitchen_Appliances.PayPalHelper
             configuration = _configuration;
         }
 
-        public async Task<string> getRedirectURLToPayPal(double total, string currency)
+        public async Task<string> getRedirectURLToPayPal(decimal total, string currency)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace Kitchen_Appliances.PayPalHelper
             PayPalAccessToken accessToken = JsonConvert.DeserializeObject<PayPalAccessToken>(content);
             return accessToken;
         }
-        private async Task<PayPalPaymentCreatedResponse> CreatePaypalPaymentAsync(HttpClient http,PayPalAccessToken accessToken, double total, string currency)
+        private async Task<PayPalPaymentCreatedResponse> CreatePaypalPaymentAsync(HttpClient http,PayPalAccessToken accessToken, decimal total, string currency)
         {
             HttpRequestMessage request =new HttpRequestMessage(HttpMethod.Post, "/v1/payments/payment");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.access_token);

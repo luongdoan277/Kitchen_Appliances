@@ -7,7 +7,7 @@ namespace Kitchen_Appliances.Models
 {
     public class OrderItem
     {
-        public int ItemID { get; set; }
+        public int OrderItemID { get; set; }
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public int ProductQty { get; set; }
