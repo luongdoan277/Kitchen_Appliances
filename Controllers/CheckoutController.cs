@@ -33,7 +33,7 @@ namespace Kitchen_Appliances.Controllers
             return View(Items);
         }
         [HttpPost]
-        public async Task<IActionResult> Checkout(int payment_method,double total, string firstName, string lastName, string email, string Number, string address)
+        public async Task<IActionResult> Checkout(int payment_method, double total, string firstName, string lastName, string email, string Number, string address)
         {
             Random random = new Random();
             StringBuilder builder = new StringBuilder();
@@ -79,13 +79,77 @@ namespace Kitchen_Appliances.Controllers
             {
                 if (payment_method == 1)
                 {
-                    var environment = new SandboxEnvironment(configuration["PayPal:clientId"], configuration["PayPal:secret"]);
-                    var client = new PayPalHttpClient(environment);
+                    //    var environment = new SandboxEnvironment(configuration["PayPal:clientId"], configuration["PayPal:secret"]);
+                    //    var client = new PayPalHttpClient(environment);
 
-                    var payment = new Payment()
+                    //    var payment = new Payment()
+                    //    {
+                    //        Intent = "sale",
+                    //        Transactions = new List<Transaction>()
+                    //{
+                    //    new Transaction()
+                    //    {
+                    //        Amount = new Amount()
+                    //        {
+                    //            Total = total.ToString(),
+                    //            Currency = "USD"
+                    //        }
+                    //    }
+                    //},
+                    //        RedirectUrls = new RedirectUrls()
+                    //        {
+                    //            CancelUrl = configuration["PayPal:cancelUrl"],
+                    //            ReturnUrl = configuration["PayPal:returnUrl"]
+                    //        },
+                    //        Payer = new Payer()
+                    //        {
+                    //            PaymentMethod = "paypal"
+                    //        }
+                    //    };
+
+                    //    PaymentCreateRequest request = new PaymentCreateRequest();
+                    //    request.RequestBody(payment);
+
+                    //    try
+                    //    {
+                    //        HttpResponse response = await client.Execute(request);
+                    //        var statusCode = response.StatusCode;
+                    //        Payment result = response.Result<Payment>();
+                    //        var links = result.Links.GetEnumerator();
+                    //        while (links.MoveNext())
+                    //        {
+                    //            LinkDescriptionObject lnk = links.Current;
+                    //            if (lnk.Rel.ToLower().Trim().Equals("approval_url"))
+                    //            {
+                    //                //saving the payapalredirect URL to which user will be redirected for payment  
+                    //                url = lnk.Href;
+                    //            }
+                    //        }
+                    //    }
+                    //    catch (HttpException httpException)
+                    //    {
+                    //        var statusCode = httpException.StatusCode;
+                    //        var debugId = httpException.Headers.GetValues("PayPal-Debug-Id").FirstOrDefault();
+                    //    }
+                    url = await PaypalPayment(total);
+                    if(url != null)
                     {
-                        Intent = "sale",
-                        Transactions = new List<Transaction>()
+                        HttpContext.Session.Remove("cart");
+                    };
+                }
+            }
+            return Redirect(url);
+        }
+
+        public async Task<string> PaypalPayment(double total)
+        {
+            var environment = new SandboxEnvironment(configuration["PayPal:clientId"], configuration["PayPal:secret"]);
+            var client = new PayPalHttpClient(environment);
+
+            var payment = new Payment()
+            {
+                Intent = "sale",
+                Transactions = new List<Transaction>()
                 {
                     new Transaction()
                     {
@@ -96,109 +160,42 @@ namespace Kitchen_Appliances.Controllers
                         }
                     }
                 },
-                        RedirectUrls = new RedirectUrls()
-                        {
-                            CancelUrl = configuration["PayPal:cancelUrl"],
-                            ReturnUrl = configuration["PayPal:returnUrl"]
-                        },
-                        Payer = new Payer()
-                        {
-                            PaymentMethod = "paypal"
-                        }
-                    };
+                RedirectUrls = new RedirectUrls()
+                {
+                    CancelUrl = configuration["PayPal:cancelUrl"],
+                    ReturnUrl = configuration["PayPal:returnUrl"]
+                },
+                Payer = new Payer()
+                {
+                    PaymentMethod = "paypal"
+                }
+            };
 
-                    PaymentCreateRequest request = new PaymentCreateRequest();
-                    request.RequestBody(payment);
-
-                    try
+            PaymentCreateRequest request = new PaymentCreateRequest();
+            request.RequestBody(payment);
+            string paypalRedirectUrl = null;
+            try
+            {
+                HttpResponse response = await client.Execute(request);
+                var statusCode = response.StatusCode;
+                Payment result = response.Result<Payment>();
+                var links = result.Links.GetEnumerator();
+                while (links.MoveNext())
+                {
+                    LinkDescriptionObject lnk = links.Current;
+                    if (lnk.Rel.ToLower().Trim().Equals("approval_url"))
                     {
-                        HttpResponse response = await client.Execute(request);
-                        var statusCode = response.StatusCode;
-                        Payment result = response.Result<Payment>();
-                        var links = result.Links.GetEnumerator();
-                        while (links.MoveNext())
-                        {
-                            LinkDescriptionObject lnk = links.Current;
-                            if (lnk.Rel.ToLower().Trim().Equals("approval_url"))
-                            {
-                                //saving the payapalredirect URL to which user will be redirected for payment  
-                                url = lnk.Href;
-                            }
-                        }
-                    }
-                    catch (HttpException httpException)
-                    {
-                        var statusCode = httpException.StatusCode;
-                        var debugId = httpException.Headers.GetValues("PayPal-Debug-Id").FirstOrDefault();
+                        //saving the payapalredirect URL to which user will be redirected for payment  
+                        paypalRedirectUrl = lnk.Href;
                     }
                 }
             }
-            return Redirect(url);
-        }
-
-        //public async Task<IActionResult> CreatePaypalPaymentAsync(double total)
-        //{
-        //    var environment = new SandboxEnvironment(configuration["PayPal:clientId"], configuration["PayPal:secret"]);
-        //    var client = new PayPalHttpClient(environment);
-
-        //    var payment = new Payment()
-        //    {
-        //        Intent = "sale",
-        //        Transactions = new List<Transaction>()
-        //        {
-        //            new Transaction()
-        //            {
-        //                Amount = new Amount()
-        //                {
-        //                    Total = total.ToString(),
-        //                    Currency = "USD"
-        //                }
-        //            }
-        //        },
-        //        RedirectUrls = new RedirectUrls()
-        //        {
-        //            CancelUrl = configuration["PayPal:cancelUrl"],
-        //            ReturnUrl = configuration["PayPal:returnUrl"]
-        //        },
-        //        Payer = new Payer()
-        //        {
-        //            PaymentMethod = "paypal"
-        //        }
-        //    };
-
-        //    PaymentCreateRequest request = new PaymentCreateRequest();
-        //    request.RequestBody(payment);
-
-        //    try
-        //    {
-        //        HttpResponse response = await client.Execute(request);
-        //        var statusCode = response.StatusCode;
-        //        Payment result = response.Result<Payment>();
-        //        return var links = result.Links.GetEnumerator();
-        //        string paypalRedirectUrl = null;
-        //        while (links.MoveNext())
-        //        {
-        //            LinkDescriptionObject lnk = links.Current;
-        //            if (lnk.Rel.ToLower().Trim().Equals("approval_url"))
-        //            {
-        //                //saving the payapalredirect URL to which user will be redirected for payment  
-        //                paypalRedirectUrl = lnk.Href;
-        //            }
-        //        }
-
-        //        return Redirect(paypalRedirectUrl);
-        //    }
-        //    catch (HttpException httpException)
-        //    {
-        //        var statusCode = httpException.StatusCode;
-        //        var debugId = httpException.Headers.GetValues("PayPal-Debug-Id").FirstOrDefault();
-        //        return Redirect("/Paypal/CheckoutFail");
-        //    }
-        //}
-        [Route("Success")]
-        public IActionResult Success(double total)
-        {
-            return View();
+            catch (HttpException httpException)
+            {
+                var statusCode = httpException.StatusCode;
+                var debugId = httpException.Headers.GetValues("PayPal-Debug-Id").FirstOrDefault();
+            }
+            return paypalRedirectUrl;
         }
     }
 }
