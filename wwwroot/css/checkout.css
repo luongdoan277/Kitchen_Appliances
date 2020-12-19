@@ -6,7 +6,7 @@
 }
 
 .checkout-container {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -111,16 +111,13 @@ tbody > tr {
         outline: none;
     }
 
-.cart-total {
-    margin-bottom: 8rem;
-}
 
     .cart-total .total-price {
         display: flex;
         justify-content: flex-end;
         font-size: 24px;
         font-weight: bold;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
     .cart-total .clearfix {
@@ -336,7 +333,7 @@ input:focus {
 }
 
 .cart-null {
-    height: 60rem;
+    height: 33rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -355,3 +352,29 @@ input:focus {
             font-weight: bold;
             color: crimson;
         }
+
+
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 20px;
+    background: #d3d3d3;
+}
+
+
+    .menu > a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #5c6268;
+        font-weight: bold;
+    }
+
+.menu > a:hover {
+
+}
+
+    .menu > span {
+       font-weight: bold;
+    }

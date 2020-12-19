@@ -88,49 +88,6 @@ prePro.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-//----------------Product Feature---------------------//
-
-
-
-const featureList = $('.feature-list');
-
-const nextFea = $('#nextFea');
-const preFea = $('#preFea');
-
-
-featureList.style.width = (productItem.length - 20) * imgProduct + "px";
-
-let count = 0;
-
-nextFea.addEventListener('click', () => {
-    if (count < productItem.length - 1) {
-        count++;
-    } else {
-        count = 0;
-    }
-    featureList.style.transition = "transform 0.4s ease-in-out";
-    featureList.style.transform = 'translateX(' + (- imgProduct * count) + 'px)';
-});
-
-preFea.addEventListener('click', () => {
-    if (count == 0) {
-        count = productItem.length - 1;
-    }
-    else {
-        count--;
-    }
-    featureList.style.transition = "transform 0.4s ease-in-out";
-    featureList.style.transform = 'translateX(' + (-imgProduct * count) + 'px)';
-});
-
-
-
 //
 
 const navLinks = document.querySelectorAll('.link');
