@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kitchen_Appliances.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20201217161715_Initial")]
+    [Migration("20201221071611_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,6 +121,8 @@ namespace Kitchen_Appliances.Migrations
 
                     b.HasKey("OrderID");
 
+                    b.HasIndex("CustomerID");
+
                     b.ToTable("Orders");
                 });
 
@@ -141,6 +143,9 @@ namespace Kitchen_Appliances.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("OrderItemID");
+
+                    b.HasIndex("OrderID")
+                        .IsUnique();
 
                     b.ToTable("OrderItems");
                 });
@@ -188,6 +193,26 @@ namespace Kitchen_Appliances.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("Kitchen_Appliances.Models.Order", b =>
+                {
+                    b.HasOne("Kitchen_Appliances.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.OrderItem", b =>
+                {
+                    b.HasOne("Kitchen_Appliances.Models.Order", null)
+                        .WithOne("OrderItem")
+                        .HasForeignKey("Kitchen_Appliances.Models.OrderItem", "OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>
                 {
                     b.HasOne("Kitchen_Appliances.Models.Category", "Categories")
@@ -202,6 +227,11 @@ namespace Kitchen_Appliances.Migrations
             modelBuilder.Entity("Kitchen_Appliances.Models.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Kitchen_Appliances.Models.Order", b =>
+                {
+                    b.Navigation("OrderItem");
                 });
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Product", b =>

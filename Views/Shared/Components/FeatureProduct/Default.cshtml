@@ -4,10 +4,10 @@
 <div class="feature-list">
     @foreach (var p in Model.Products)
     {
-        <div class="product">
+        @*<div class="product">
             <img src=@p.ProductImage alt="" />
             <div class="product-iformation">
-                <a href="ProductDetail/Id=@p.ProductID">@p.ProductName</a>
+                <a asp-action="Index" asp-controller="Product" asp-route-ProductID="@Model.ProductID">@Model.ProductName</a>
                 <ul class="feed-back">
                     <li>
                         <a href=""><i class="fas fa-star"></i></a>
@@ -28,6 +28,7 @@
                 <a class="cart" href=""> <i class="fas fa-shopping-cart"></i> </a>
                 <p>Add to cart</p>
             </div>
-        </div>
+        </div>*@
+        <vc:itemproduct-home product="p"/>
     }
 </div>

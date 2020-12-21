@@ -37,7 +37,7 @@ namespace Kitchen_Appliances.Controllers
         {
             Random random = new Random();
             StringBuilder builder = new StringBuilder();
-            string OrderOPP = builder.Append(Convert.ToChar(Convert.ToInt32(random.Next(1, 125)))).ToString();
+            string OrderOPP = builder.Append(Convert.ToChar(Convert.ToInt32(random.Next(1, 255)))).ToString();
             Customer customer = new Customer
             {
                 CustomerName = firstName + lastName,
