@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Kitchen_Appliances.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Kitchen_Appliances
 {
@@ -33,6 +34,19 @@ namespace Kitchen_Appliances
                   (Configuration["ConnectionStrings:KitchenAppliances"]);
               }
               );
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/account/google-login"; // Must be lowercase
+                })
+                .AddGoogle(options =>
+                {
+                    options.ClientId = "154224909507-j5c2r6vc8mgo71ocovbie5ajnt6krb9m.apps.googleusercontent.com";
+                    options.ClientSecret = "KeNJ3OSFnPL0FwdnIQLKniW-";
+                });
             services.AddScoped<IStoreRepository, EFStoreRepository>();
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
@@ -59,6 +73,7 @@ namespace Kitchen_Appliances
             app.UseRouting();
             app.UseSession();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
