@@ -15,16 +15,18 @@ namespace Kitchen_Appliances.Services
     public class SendMailService : ISendMailService
     {
         private readonly MailSettings mailSettings;
+        private readonly StoreDbContext context;
 
         private readonly ILogger<SendMailService> logger;
 
 
         // mailSetting được Inject qua dịch vụ hệ thống
         // Có inject Logger để xuất log
-        public SendMailService(IOptions<MailSettings> _mailSettings, ILogger<SendMailService> _logger)
+        public SendMailService(IOptions<MailSettings> _mailSettings, ILogger<SendMailService> _logger, StoreDbContext _context)
         {
             mailSettings = _mailSettings.Value;
             logger = _logger;
+            context = _context;
         }
 
         // Gửi email, theo nội dung trong mailContent
@@ -78,10 +80,8 @@ namespace Kitchen_Appliances.Services
             var address = order.OrderAddress;
             var orderOPP = order.OrderOPP;
             var total = order.TotalPrice.ToString();
-            //foreach (var list in order.OrderItem)
-            //{
+            var list = context.OrderItems.Where(l => l.OrderID == order.OrderID).FirstOrDefault();
 
-            //};
             MailText = MailText.Replace("[username]", name)
                                .Replace("[email]", emailuser)
                                .Replace("[phone]", phone)

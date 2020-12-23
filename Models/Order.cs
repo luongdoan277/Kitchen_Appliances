@@ -18,7 +18,7 @@ namespace Kitchen_Appliances.Models
         [Column(TypeName = "decimal(8,2)")]
         public double TotalPrice { get; set; }
         public bool OrderStatus { get; set; }
-        public virtual Customer Customer { get; set; }
-        public virtual OrderItem OrderItem { get; set; }
+        public DateTime dateTime { get; set; }
+        public virtual Customer Customer { get; }
     }
 }
