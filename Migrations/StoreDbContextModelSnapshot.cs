@@ -16,7 +16,7 @@ namespace Kitchen_Appliances.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("Kitchen_Appliances.Models.Category", b =>
                 {

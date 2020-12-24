@@ -81,9 +81,11 @@ namespace Kitchen_Appliances
                 endpoints.MapControllerRoute("catpage",
                      "{category}/Page{productPage:int}",
                      new { Controller = "Home", action = "Index" });
+
                 endpoints.MapControllerRoute("page",
                     "/",
                     new { Controller = "Home", action = "Index", productPage = 1 });
+
                 endpoints.MapControllerRoute("pagination",
                     "Drinks/page{productPage:int}",
                     new { Controller = "Home", action = "Index", productPage = 1 });
@@ -101,6 +103,15 @@ namespace Kitchen_Appliances
                 endpoints.MapControllerRoute("Checkout",
                     "Checkout",
                     new { Controller = "Checkout", action = "Index" });
+
+                //Admin
+                endpoints.MapControllerRoute("Admin",
+                    "Admin",
+                    new { Controller = "Admin", action = "Index" });
+
+                endpoints.MapControllerRoute("AdminProduct",
+                    "Admin/Product",
+                    new { Controller = "Admin", action = "AdminProduct" });
 
 
                 endpoints.MapDefaultControllerRoute();
