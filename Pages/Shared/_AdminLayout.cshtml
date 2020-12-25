@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="~/css/admin.css" />
+    <link href="~/lib/FontAwesome/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header id="page-wrapper">
+        <div class="navbar-header">
+            <div class="header__left">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="~/image/logo-light.png" alt="logo" />
+                    </a>
+                </div>
+                <!-- Menu-hamburger -->
+                <button class="menu-hamburger"><i class="fas fa-bars"></i></button>
+
+                <!-- search -->
+                <div class="search-input">
+                    <form action="" class="form-search">
+                        <input type="text" placeholder="Search..." />
+                        <span><i class="fas fa-search"></i></span>
+                    </form>
+                </div>
+            </div>
+            <div class="header__right">
+                <!-- Notification -->
+                <button class="notification">
+                    <i class="far fa-bell"></i>
+                    <span>4</span>
+                </button>
+                <!-- user -->
+                <button class="user">
+                    <img src="~/image/avatar-1.jpg" alt="" />
+                    <span>Kin</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <!-- setting -->
+                <button class="setting">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+    <div class="content">
+        <div class="vertical-menu">
+            <div class="pillar">
+                <ul class="layouts">
+                    <li class="menu-title">Menu</li>
+                    <li>
+                        <a href="#"><i class="fas fa-home"></i> Dashboards</a>
+                    </li>
+                    <li>
+                        <a class="item"><i class="fas fa-border-all"></i> Layouts</a>
+                        <ul class="child-layout">
+                            <li><a href="#">Vertical</a></li>
+                            <li><a href="#">Horizontol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pillar">
+                <ul class="layouts">
+                    <li class="menu-title">Apps</li>
+                    <li>
+                        <a href="#"><i class="far fa-calendar-alt"></i> Calender</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="far fa-comment-alt"></i> Chat</a>
+                    </li>
+                    <li>
+                        <a class="item"><i class="fas fa-cash-register"></i> Ecomerce</a>
+                        <ul class="child-layout">
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Product Detail</a></li>
+                            <li><a href="#">Order</a></li>
+                            <li><a href="#">Customer</a></li>
+                            <li><a href="#">Cart</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Shop</a></li>
+                            <li><a href="#">Add Product</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="item"><i class="fab fa-bootstrap"></i>Layouts</a>
+                        <ul class="child-layout">
+                            <li><a href="#">Vertical</a></li>
+                            <li><a href="#">Horizontol</a></li>
+                            <li><a href="#">Vertical</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pillar">
+                <ul class="layouts">
+                    <li class="menu-title">Page</li>
+                    <li>
+                        <a href="#"><i class="far fa-envelope"></i> Email</a>
+                    </li>
+                    <li>
+                        <a class="item"><i class="fas fa-border-all"></i> Invoice</a>
+                        <ul class="child-layout">
+                            <li><a href="#">Vertical</a></li>
+                            <li><a href="#">Horizontol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pillar">
+                <ul class="layouts">
+                    <li class="menu-title">Component</li>
+                    <li>
+                        <a href="#"><i class="fab fa-r-project"></i>Project</a>
+                    </li>
+                    <li>
+                        <a class="item"><i class="fas fa-tasks"></i> Tasks</a>
+                        <ul class="child-layout">
+                            <li><a href="#">Vertical</a></li>
+                            <li><a href="#">Horizontol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            @RenderBody()
+        </div>
+    </div>
+    </main>
+    <footer></footer>
+    <script src="js/vertical-menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script>
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: "line",
+
+            // The data for our dataset
+            data: {
+                labels: [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                ],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        backgroundColor: "#556ee6",
+                        borderColor: "#556ee6",
+                        data: [0, 10, 5, 2, 20, 30, 45],
+                    },
+                ],
+            },
+
+            // Configuration options go here
+            options: {},
+        });
+    </script>
+</body>
+</html>

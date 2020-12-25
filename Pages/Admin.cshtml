@@ -1,0 +1,196 @@
+﻿@page
+
+<div class="page-content">
+    <div class="container-fuild">
+        <!-- Title -->
+        <div class="page-title">
+            <div class="title__dashboard">
+                <p>Dashboard</p>
+            </div>
+            <div class="title__dashboardchild">
+                <a href="#">Dashboard</a>
+                <span>/</span>
+                <p>Dashboard</p>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="main__contain">
+            <div class="content__left">
+                <div class="card__left">
+                    <div class="card-primary__left">
+                        <div class="card-titles">
+                            <h5 class="text-primary">Welcome back!</h5>
+                            <p>Chickin</p>
+                        </div>
+                        <div class="card-imgs">
+                            <img src="~/image/profile-img.png"
+                                 style="height: 100px"
+                                 alt="" />
+                        </div>
+                    </div>
+                    <div class="card-body__left">
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="~/image/avatar-1.jpg" style="height: 70px" alt="">
+                            </div>
+                            <h5>Khanh Vg</h5>
+                            <p>UI/UX Designer</p>
+                        </div>
+                        <div class="parameter-profile">
+                            <a href="#" class="view-profile">View Profile <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__left">
+                    <!-- <canvas id="myPieChart"></canvas> -->
+                </div>
+            </div>
+            <div class="content__right">
+                <!-- parameter -->
+                <div class="parameter">
+                    <div class="parameter__content">
+                        <div class="media">
+                            <div class="media-body">
+                                <p>Orders</p>
+                                <h4>1.235</h4>
+                            </div>
+                            <div class="media-avatar">
+                                <i class="far fa-clone"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parameter__content">
+                        <div class="media">
+                            <div class="media-body">
+                                <p>Revenue</p>
+                                <h4>$35, 723</h4>
+                            </div>
+                            <div class="media-avatar">
+                                <i class="fas fa-calendar-week"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="parameter__content">
+                        <div class="media">
+                            <div class="media-body">
+                                <p>Average Price</p>
+                                <h4>$16.2</h4>
+                            </div>
+                            <div class="media-avatar">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chart.js -->
+                <div class="chart">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <!--  -->
+            </div>
+        </div>
+
+        <!-- card -->
+        <div class="card-content">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Latest Transaction</h4>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Billing Name</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Payment Status</th>
+                                    <th>Payment Method</th>
+                                    <th>View Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#">#SK2540</a></td>
+                                    <td>Neal Matthews</td>
+                                    <td>07 Oct, 2019</td>
+                                    <td>$400</td>
+                                    <td><span class="success-brd">Paid</span></td>
+                                    <td>Mastercard</td>
+                                    <td>
+                                        <button class="view-detail">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">#SK2540</a></td>
+                                    <td>Neal Matthews</td>
+                                    <td>07 Oct, 2019</td>
+                                    <td>$400</td>
+                                    <td><span class="danger-brd">Chargeback</span></td>
+                                    <td>Mastercard</td>
+                                    <td>
+                                        <button class="view-detail">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">#SK2540</a></td>
+                                    <td>Neal Matthews</td>
+                                    <td>07 Oct, 2019</td>
+                                    <td>$400</td>
+                                    <td><span class="success-brd">Paid</span></td>
+                                    <td>Mastercard</td>
+                                    <td>
+                                        <button class="view-detail">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">#SK2540</a></td>
+                                    <td>Neal Matthews</td>
+                                    <td>07 Oct, 2019</td>
+                                    <td>$400</td>
+                                    <td><span class="success-brd">Paid</span></td>
+                                    <td>Mastercard</td>
+                                    <td>
+                                        <button class="view-detail">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">#SK2540</a></td>
+                                    <td>Neal Matthews</td>
+                                    <td>07 Oct, 2019</td>
+                                    <td>$400</td>
+                                    <td><span class="success-brd">Paid</span></td>
+                                    <td>Mastercard</td>
+                                    <td>
+                                        <button class="view-detail">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">#SK2540</a></td>
+                                    <td>Neal Matthews</td>
+                                    <td>07 Oct, 2019</td>
+                                    <td>$400</td>
+                                    <td><span class="warning-brd">Refund</span></td>
+                                    <td>Mastercard</td>
+                                    <td>
+                                        <button class="view-detail">View Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">#SK2540</a></td>
+                                    <td>Neal Matthews</td>
+                                    <td>07 Oct, 2019</td>
+                                    <td>$400</td>
+                                    <td><span class="success-brd">Paid</span></td>
+                                    <td>Mastercard</td>
+                                    <td>
+                                        <button class="view-detail">View Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
