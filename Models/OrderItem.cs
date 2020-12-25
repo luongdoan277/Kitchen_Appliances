@@ -11,5 +11,7 @@ namespace Kitchen_Appliances.Models
         public int OrderID { get; set; }
         public int ProductID { get; set; }
         public int ProductQty { get; set; }
+        public virtual Order Order { get; }
+        public virtual Product Product { get; }
     }
 }

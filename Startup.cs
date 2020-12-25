@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Kitchen_Appliances.Models;
+using Kitchen_Appliances.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+
 
 namespace Kitchen_Appliances
 {
@@ -51,7 +53,8 @@ namespace Kitchen_Appliances
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
-
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<ISendMailService, SendMailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
