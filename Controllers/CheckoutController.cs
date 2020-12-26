@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kitchen_Appliances.Controllers
 {
@@ -30,6 +30,7 @@ namespace Kitchen_Appliances.Controllers
             context = _context;
             repository = repo;
         }
+        [Authorize]
         public IActionResult Index()
         {
             Itemcart Items = HttpContext.Session.GetJson<Itemcart>("cart");

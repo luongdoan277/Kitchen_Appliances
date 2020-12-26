@@ -14,6 +14,7 @@ namespace Kitchen_Appliances.Controllers
     public class HomeController : Controller
     {
         private readonly IStoreRepository repository;
+
         public int PageSize = 20;
 
         public HomeController(IStoreRepository repo)
