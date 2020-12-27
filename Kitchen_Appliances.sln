@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kitchen_Appliances", "Kitchen_Appliances.csproj", "{3D19C460-186C-40D9-A7DD-BD0FCA6EC647}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5810FCC-9271-4876-A983-93B4A7926A5A} = {D5810FCC-9271-4876-A983-93B4A7926A5A}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "..\Admin\Admin.csproj", "{D5810FCC-9271-4876-A983-93B4A7926A5A}"
 EndProject
