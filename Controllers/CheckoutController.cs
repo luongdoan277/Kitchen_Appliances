@@ -14,12 +14,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Kitchen_Appliances.Services;
 
 namespace Kitchen_Appliances.Controllers
 {
     public class CheckoutController : Controller
     {
         public IConfiguration configuration { get; }
+        //public SendMailService sendMailService { get; set; }
         private readonly StoreDbContext context;
         private readonly IStoreRepository repository;
 
@@ -29,6 +31,7 @@ namespace Kitchen_Appliances.Controllers
             configuration = _configuration;
             context = _context;
             repository = repo;
+            //sendMailService = _sendMailService;
         }
         [Authorize]
         public IActionResult Index()
@@ -36,7 +39,8 @@ namespace Kitchen_Appliances.Controllers
             Itemcart Items = HttpContext.Session.GetJson<Itemcart>("cart");
             return View(Items);
         }
-        [HttpPost]
+
+        [HttpPost("checkout")]
         public async Task<IActionResult> Checkout(int payment_method, double total, string firstName, string lastName, string email, string Number, string address)
         {
             Random random = new Random();
@@ -61,7 +65,7 @@ namespace Kitchen_Appliances.Controllers
                 OrderAddress = address,
                 ShipMethod = 1,
                 PaymentMethod = payment_method,
-                PaymentStatus = true,
+                PaymentStatus = false,
                 TotalPrice = total,
                 dateTime = DateTime.Now,
                 OrderStatus = true
@@ -70,7 +74,6 @@ namespace Kitchen_Appliances.Controllers
             await context.SaveChangesAsync();
 
             var orderID = order.OrderID;
-            Console.WriteLine(orderID);
             Itemcart Items = HttpContext.Session.GetJson<Itemcart>("cart");
             foreach (var item in Items.Items)
             {
@@ -96,10 +99,14 @@ namespace Kitchen_Appliances.Controllers
                     url = await PaypalPayment(total);
                     if(url != null)
                     {
+                        order.PaymentStatus = true;
+                        context.Update(order);
+                        await context.SaveChangesAsync();
                         HttpContext.Session.Remove("cart");
                     };
                 }
             }
+            //await sendMailService.SendCheckoutEmailAsync(order);
             return Redirect(url);
         }
 

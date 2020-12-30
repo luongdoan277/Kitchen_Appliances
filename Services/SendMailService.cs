@@ -68,7 +68,7 @@ namespace Kitchen_Appliances.Services
             logger.LogInformation("send mail to " + mailContent.To);
 
         }
-        public async Task SendWelcomeEmailAsync(Order order)
+        public async Task SendCheckoutEmailAsync(Order order)
         {
             string FilePath = Directory.GetCurrentDirectory() + "\\Pages\\CheckoutCart.html";
             StreamReader str = new StreamReader(FilePath);
